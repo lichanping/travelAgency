@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九州环线执行手册 · 指定席预约表 · 每日卡点 · 住宿比价（10/27–11/1）</title>
+<style>
+:root{
+  --ink:#1a1d21; --ink2:#4a5259; --ink3:#7b858e;
+  --line:#e3e7ea; --line2:#f0f3f5;
+  --bg:#f7f8f9; --card:#ffffff;
+  --red:#c62828; --redbg:#fdecec;
+  --amber:#b26a00; --amberbg:#fff7e6;
+  --green:#1b7f4b; --greenbg:#eaf7f0;
+  --blue:#1d5fa8; --bluebg:#eef4fc;
+  --purple:#6a3d9a; --purplebg:#f3eefb;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+
+/* ---------- header ---------- */
+header{
+  background:linear-gradient(135deg,#1f2933 0%,#2d3b47 55%,#3a4a58 100%);
+  color:#fff;padding:44px 20px 38px;margin-bottom:0;
+}
+header .wrap{padding-bottom:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb0bd;text-transform:uppercase;margin-bottom:10px}
+h1{font-size:29px;line-height:1.35;margin:0 0 12px;font-weight:700;letter-spacing:.01em}
+.sub{color:#c3d0d9;font-size:14.5px;margin:0 0 20px;max-width:760px}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  padding:5px 12px;border-radius:20px;font-size:12.5px;color:#e7eef3;
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--line);margin-bottom:28px;
+}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{
+  flex:0 0 auto;padding:13px 15px;color:var(--ink2);text-decoration:none;
+  font-size:13.5px;font-weight:600;border-bottom:2px solid transparent;white-space:nowrap;
+}
+nav a:hover{color:var(--ink);background:var(--line2)}
+nav a[aria-current="location"]{color:var(--blue);background:var(--bluebg);border-bottom-color:var(--blue)}
+
+/* ---------- section ---------- */
+section{margin:0 0 40px;scroll-margin-top:64px}
+h2{
+  font-size:20px;margin:0 0 6px;font-weight:700;display:flex;align-items:center;gap:10px;
+}
+h2 .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:27px;height:27px;border-radius:8px;background:var(--ink);color:#fff;
+  font-size:13.5px;font-weight:700;flex:0 0 auto;
+}
+.lead{color:var(--ink2);font-size:14px;margin:0 0 18px;padding-left:37px}
+h3{font-size:16px;margin:26px 0 10px;font-weight:700;color:var(--ink)}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;margin:0 0 14px;
+}
+
+/* ---------- callout ---------- */
+.note{
+  border-radius:10px;padding:13px 16px;margin:14px 0;font-size:13.8px;line-height:1.7;
+  border-left:4px solid;
+}
+.note b{font-weight:700}
+.note .time{white-space:normal;overflow-wrap:anywhere}
+#hotel-booked,#hotel-transport{scroll-margin-top:80px}
+.note.warn{background:var(--redbg);border-color:var(--red);color:#7a1414}
+.note.tip{background:var(--greenbg);border-color:var(--green);color:#0f4d2e}
+.note.info{background:var(--bluebg);border-color:var(--blue);color:#123a6b}
+.note.amber{background:var(--amberbg);border-color:var(--amber);color:#7a4a00}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:#fff;margin:0 0 14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th{
+  background:#f4f6f8;text-align:left;padding:11px 13px;font-weight:700;
+  color:var(--ink2);font-size:12.5px;letter-spacing:.04em;border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+td{padding:11px 13px;border-bottom:1px solid var(--line2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";letter-spacing:.01em}
+.time{font-weight:700;color:var(--ink);white-space:nowrap}
+.bath-available{font-weight:800;color:var(--red)}
+.dest{font-weight:600}
+
+/* ---------- badges ---------- */
+.b{display:inline-block;padding:2px 8px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap;line-height:1.6}
+.b.must{background:var(--redbg);color:var(--red)}
+.b.book{background:var(--amberbg);color:var(--amber)}
+.b.ok{background:var(--greenbg);color:var(--green)}
+.b.info{background:var(--bluebg);color:var(--blue)}
+.b.free{background:var(--greenbg);color:var(--green)}
+.b.no{background:#eef0f2;color:#6b747c}
+.b.new{background:var(--purplebg);color:var(--purple)}
+
+/* ---------- day header ---------- */
+.day{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding:13px 18px;border-radius:11px 11px 0 0;border:1px solid var(--line);border-bottom:none;
+  background:#fff;margin-top:22px;
+}
+.day .d{font-size:17px;font-weight:800}
+.day .dt{font-size:13px;color:var(--ink3);font-weight:600}
+.day .route{font-size:13px;color:var(--ink2);margin-left:auto}
+.day + .tw{border-radius:0 0 12px 12px;margin-top:0}
+
+/* ---------- hotel ---------- */
+h4{font-size:15px;margin:20px 0 10px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+h4 .city{background:var(--ink);color:#fff;padding:3px 10px;border-radius:6px;font-size:13px}
+h4 .when{font-size:12.5px;color:var(--ink3);font-weight:600}
+.pick{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--green);
+  border-radius:10px;padding:15px 18px;margin:0 0 12px;
+}
+.pick .name{font-size:15.5px;font-weight:800;margin-bottom:5px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pick .why{font-size:13.5px;color:var(--ink2);line-height:1.7}
+.pick .why b{color:var(--ink)}
+.alt{
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:13px 16px;margin:0 0 10px;font-size:13.5px;
+}
+.alt .name{font-weight:700;margin-bottom:4px}
+.alt .why{color:var(--ink2);line-height:1.65}
+
+.plat{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:9px;margin:12px 0 4px;
+}
+.plat .p{
+  border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fcfdfd;
+}
+.plat .p .pn{font-size:11.5px;color:var(--ink3);font-weight:700;letter-spacing:.05em;margin-bottom:3px}
+.plat .p .pv{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums}
+.plat .p .pd{font-size:11.5px;color:var(--ink3);margin-top:2px;line-height:1.5}
+.plat .p.best{background:var(--greenbg);border-color:#b6dfc8}
+.plat .p.best .pv{color:var(--green)}
+
+/* ---------- misc ---------- */
+ul.clean{margin:8px 0;padding-left:20px}
+ul.clean li{margin:5px 0;font-size:13.8px;color:var(--ink2);line-height:1.7}
+ul.clean li b{color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:720px){
+  .grid2{grid-template-columns:1fr}
+  h1{font-size:23px}
+  .lead{padding-left:0}
+  header{padding:30px 20px 26px}
+}
+.src{
+  font-size:12.5px;color:var(--ink3);line-height:1.75;margin-top:10px;
+}
+.src b{color:var(--ink2)}
+.price-current{color:var(--red);font-weight:800;white-space:nowrap}
+.price-meta{display:block;color:var(--ink3);font-size:11.5px;line-height:1.5}
+details.archive{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+details.archive summary{cursor:pointer;color:var(--ink2);font-size:13px;font-weight:700}
+details.archive .price-current{color:var(--ink3);text-decoration:line-through}
+.hotel-map{height:480px;width:100%;position:relative;z-index:0;background:#eef4f5}
+.hotel-map[hidden]{display:none}
+.hotel-map-fallback{overflow-x:auto;background:#eef4f5;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hotel-map-fallback svg{display:block;width:100%;min-width:720px;height:auto}
+.hotel-pin{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;border:2px solid #fff;font-size:13px;font-weight:800}
+.leaflet-tooltip{white-space:normal;max-width:190px;font-family:inherit;font-size:12px}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12.5px;color:var(--ink2);margin:8px 0}
+.map-load{margin:0 0 12px;padding:7px 12px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--blue);font:inherit;cursor:pointer}
+.map-load:disabled{cursor:wait;color:var(--ink3)}
+@media print{.hotel-map,.map-load{display:none!important}.hotel-map-fallback[hidden]{display:block!important}}
+footer{
+  border-top:1px solid var(--line);margin-top:44px;padding-top:22px;
+  font-size:12.5px;color:var(--ink3);line-height:1.8;
+}
+strong{font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 16px;font-size:12.5px;color:var(--ink2)}
+.legend span{display:flex;align-items:center;gap:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Action Sheet · 执行清单</div>
+    <h1>九州环线执行手册<br>指定席预约表 · 每日卡点 · 住宿比价</h1>
+    <p class="sub">在《九州6日环线手册·阿苏火山版》基础上，按 JR 九州官方时刻表逐段核对，标出需要提前划位的指定席、每天不能错过的硬时间点，并给出五晚住宿的四平台比价与可退订单建议。往返航班已更新为<b>东航 MU517 / MU518</b>。</p>
+    <div class="meta">
+      <span class="chip">2026/10/27 – 11/1</span>
+      <span class="chip">东航 MU517 / MU518</span>
+      <span class="chip">博多进出 · 顺时针闭合</span>
+      <span class="chip">JR 北九州 5 日券</span>
+      <span class="chip">行程数据 2026/10/03 · 酒店报价更新 2026/10/04</span>
+      <span class="chip">观光列车预约状态更新 2026/10/04</span>
+      <span class="chip">v3 · JR 指定席已预约</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#flight">✈ 往返航班（东航）</a>
+    <a href="#urgent">⚠ 先做这三件事</a>
+    <a href="#seat">① 指定席预约表</a>
+    <a href="#daily">② 每日卡点</a>
+    <a href="#sightseeing">每日景点路线</a>
+    <a href="#hotel">③ 已订住宿与比价</a>
+    <a href="#trip-cost">每人费用汇总</a>
+    <a href="#hotel-transport">酒店交通地图</a>
+    <a href="#fix">④ 原手册勘误</a>
+    <a href="#src">数据来源</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ FLIGHT ============ -->
+<section id="flight">
+  <h2><span class="num">✈</span>往返航班（已更新为东航）</h2>
+  <p class="lead">本次改签为东航 MU517 / MU518，<b>两个方向都提前了约 5 小时</b>，对行程的影响方向完全不同，务必先读这一节。</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:86px">航段</th><th style="width:120px">航班</th><th style="width:230px">时刻</th><th style="width:96px">机型/时长</th><th>对行程的影响</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>去程</b><br><span style="color:#7b858e;font-size:12px">10/27</span></td>
+          <td class="dest">东航<br>MU517</td>
+          <td class="mono">浦东 <b>T1</b> <b class="time">09:50</b> → 福冈 <b class="time">12:55</b><br><span style="color:#7b858e;font-size:12px">均为当地时刻</span></td>
+          <td class="mono">A321<br>约 2h05m</td>
+          <td><span class="b ok">行程变宽</span> <b>D1 多出约 4 小时下午</b>，可真正玩半天福冈；且有希望赶在 17:00 前兑换 JR 周游券。</td>
+        </tr>
+        <tr>
+          <td><b>回程</b><br><span style="color:#7b858e;font-size:12px">11/1</span></td>
+          <td class="dest">东航<br>MU518</td>
+          <td class="mono">福冈 <b class="time">13:55</b> → 浦东 <b>T1</b> <b class="time">15:10</b><br><span style="color:#7b858e;font-size:12px">均为当地时刻</span></td>
+          <td class="mono">A321<br>约 2h15m</td>
+          <td><span class="b must">行程变紧</span> <b>D6 上午压缩为「退房＋赶车」</b>，原「水前寺玩满半天」不再可行。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="note tip" style="margin-top:0">
+      <b>MU517 送你半天（D1）</b>
+      <br>12:55 落地后先完成入境、取行李及国内线接驳，再去博多取票、到酒店寄存。<b>实际游览时长以手续和交通耗时为准，不保证完整 4 小时。</b>
+      <br>优先栉田神社＋博多千年门；天神地下街或福冈塔＋百道海滨作为替换路线，不全部叠加。
+    </div>
+    <div class="note warn" style="margin-top:0">
+      <b>MU518 拿走半天（D6）</b>
+      <br>13:55 起飞，国际线按 2.5 小时倒推需 <b>11:25 前到国际航站楼</b>；建议 <b>10:00 前离开博多，目标 11:00 前到国际航站楼</b>。地铁机场站在国内航站楼，须另留国际线接驳时间。
+      <br><b>必须比原计划提前一班新干线回博多</b>，详见 D6 时间账。
+    </div>
+  </div>
+
+  <div class="note amber">
+    <b>两条与改签直接相关的提醒：</b>
+    <br>1. <b>行李额度变了。</b>东航经济舱通常含 23kg 托运（1 件），比春秋的「手提 7kg、托运另购」宽松得多——<b>不需要再额外买托运额度</b>，「26 寸以下行李箱」的约束也可以放宽。
+    <br>2. <b>落地航站楼与值机。</b>浦东为 <b>T1</b>；福冈侧东航值机柜台在 D 岛、登机口 51B 一带（以当日机场大屏为准）。<b>回程务必确认是「福冈机场国际线」而非国内线</b>，两者不在一栋楼。
+  </div>
+</section>
+
+<!-- ============ URGENT ============ -->
+<section id="urgent">
+  <h2><span class="num">!</span>先做这三件事</h2>
+  <p class="lead">JR 观光列车指定席已预约成功。出发前重点是领取纸质指定席券并确认周游券兑换，不要把预约回执当作乘车凭证。</p>
+
+  <div class="note tip">
+    <b>① 已预约｜10/28「<a href="https://you.ctrip.com/sight/yufu57524/2498865.html" target="_blank" rel="noopener noreferrer">由布院之森</a>」1 号。</b>博多 09:17 → 由布院 11:31，2 人座位已确认：4 号车 15D、6C。<b>状态：预约已确认，纸质指定席券待领取。</b>
+  </div>
+
+  <div class="note tip">
+    <b>② 已预约｜10/31「<a href="https://you.ctrip.com/sight/kumamotocity1191/1786697.html" target="_blank" rel="noopener noreferrer">阿苏 BOY!</a>」2 号。</b>阿苏 12:12 → 熊本 13:20，2 人座位已确认：4 号车 7C、7D。<b>状态：预约已确认，纸质指定席券待领取。</b>
+  </div>
+
+  <div class="note amber">
+    <b>③ 待办｜领取周游券与两张指定席券。</b>按 JR 九州回执要求，在 JR 九州指定售票窗口领取；带上预约确认回执及预订时使用的信用卡。<b>预约回执不能直接乘车，10/28 由布院之森开车前至少 30 分钟完成取票。</b>若 10/27 抵达后未能办理，10/28 请预留充足窗口时间，优先处理取票，不要再安排现场划这两趟车的座位。
+  </div>
+</section>
+
+<!-- ============ SEAT ============ -->
+<section id="seat">
+  <h2><span class="num">1</span>指定席预约表</h2>
+  <p class="lead">五段铁路全部落在 JR 北九州 5 日券范围（10/28 启用，11/1 为第 5 个有效日，当天仍可用）。已预约列车按回执时刻；其他班次仍需出发前核实，11/1 返程先按机场到达目标选车。</p>
+
+  <div class="legend">
+    <span><span class="b ok">已预约</span>回执已确认</span>
+    <span><span class="b book">待领取</span>现场领取纸质指定席券</span>
+    <span><span class="b must">必须划位</span>全车指定席，无自由席</span>
+    <span><span class="b book">建议划位</span>有自由席，但满员风险高</span>
+    <span><span class="b free">无需划位</span>自由席或普通车</span>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:52px">日期</th>
+          <th style="width:150px">车次</th>
+          <th style="width:210px">区间 · 时刻</th>
+          <th style="width:96px">座位</th>
+          <th>预约要点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono"><b>10/28</b><br><span style="color:#7b858e;font-size:12px">周三</span></td>
+          <td class="dest">由布院之森<br>1 号</td>
+          <td class="mono"><b class="time">博多 09:17</b> → <b class="time">由布院 11:31</b><br><span style="color:#7b858e;font-size:12px">2 小时 14 分 · 每日运行</span></td>
+          <td><span class="b must">必须划位</span></td>
+          <td><span class="b ok">已预约</span> <span class="b book">待领取纸券</span><br><b>2 人座位已确认：4 号车 15D、6C。</b>请携预约回执及预订时使用的信用卡，到 JR 九州指定售票窗口领取纸质指定席券；回执不能直接乘车。取票后按原计划提前到站台候车。</td>
+        </tr>
+        <tr>
+          <td class="mono"><b>10/29</b><br><span style="color:#7b858e;font-size:12px">周四</span></td>
+          <td class="dest">久大本线<br>普通车</td>
+          <td class="mono">由布院 <b class="time">08:39</b> → 大分 换乘 → <b class="time">别府 10:10</b><br><span style="color:#7b858e;font-size:12px">约 1 小时 31 分（含换乘）</span></td>
+          <td><span class="b free">无需划位</span></td>
+          <td>由布院与别府之间<b>没有直达列车</b>，必须在大分换乘一次（原手册「普通车 25 分钟直达」不成立，见勘误 ④3）。普通车自由席，刷 IC 卡或用周游券直接上车即可。</td>
+        </tr>
+        <tr>
+          <td class="mono"><b>10/30</b><br><span style="color:#7b858e;font-size:12px">周五</span></td>
+          <td class="dest">九州横断特急<br>2 号</td>
+          <td class="mono"><b class="time">别府 07:44</b> → 大分 08:07 → 丰后竹田 09:17<br>→ 宫地 10:01 → <b class="time">阿苏 10:08</b></td>
+          <td><span class="b book">建议划位</span></td>
+          <td>每日 3 往复、有自由席（2 节车厢中 1 节自由席）。<b>清晨首发班次人少但座位有限</b>，建议划位。注意原手册写的 09:30→10:50 <b>当天没有这班</b>，见勘误 ④2。</td>
+        </tr>
+        <tr>
+          <td class="mono"><b>10/31</b><br><span style="color:#7b858e;font-size:12px">周六</span></td>
+          <td class="dest">阿苏BOY!<br>2 号</td>
+          <td class="mono"><b class="time">阿苏 12:12</b> → <b class="time">熊本 13:20</b><br><span style="color:#7b858e;font-size:12px">1 小时 08 分 · 回执所示乘车区间</span></td>
+          <td><span class="b must">必须划位</span></td>
+          <td><span class="b ok">已预约</span> <span class="b book">待领取纸券</span><br><b>2 人座位已确认：4 号车 7C、7D。</b>按回执在<b>阿苏站 12:12</b>上车。预约回执不能直接乘车，请携回执及预订时使用的信用卡，到 JR 九州指定售票窗口领取纸质指定席券。</td>
+        </tr>
+        <tr>
+          <td class="mono"><b>11/1</b><br><span style="color:#7b858e;font-size:12px">周日</span></td>
+          <td class="dest">九州新干线<br>つばめ / さくら</td>
+          <td class="mono"><b>建议熊本 08:00–08:30 时段出发</b><br>目标 <b>09:30 前到博多</b><br><span style="color:#7b858e;font-size:12px">计划窗口，不是已核实班次；按停站预留约 35–60 分钟</span></td>
+          <td><span class="b book">建议划位</span></td>
+          <td><b>熊本 → 博多可用 JR 北九州 5 日券，不另买该段普通车票。</b>换券时确认 11/1 早班九州新干线时刻并办理普通车指定席；本段尚未预约。按 <b>MU518 13:55 起飞</b>安排，建议 10:00 前离开博多，目标 11:00 前到福冈机场国际航站楼。<b>地铁另付费，且需从国内航站楼换乘至国际航站楼。</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note info">
+    <b>划位额度怎么算：</b>北九州 5 日券含 6 次免费指定席划位。本行程硬性需要划位的是 <b>10/28 由布院之森、10/30 横断特急、10/31 阿苏BOY!、11/1 新干线</b>共 4 段，剩 2 次机动。若观光列车改用官网付费预约渠道（¥1,500/段），则完全不占用这 6 次额度。
+  </div>
+
+  <div class="note warn">
+    <b>⚠ 熊本地震的连带影响：</b>JR 九州 2026 秋季运行方案中注明，受令和 8 年（2026）熊本地震影响，<b>九州新干线熊本—新水俣段仍处于停运/未定状态</b>。本行程使用的 <b>博多—熊本 区间不受直接影响</b>，但运行图可能临时调整，出发前请再确认一次新干线时刻。
+  </div>
+</section>
+
+<!-- ============ DAILY ============ -->
+<section id="daily">
+  <h2><span class="num">2</span>每日必须卡住的时间点</h2>
+  <p class="lead">先看景点路线总览，再按下方时间表执行。红色＝必须保住的时间点；黄色＝需要提前准备或确认；绿色＝弹性游览。已预约列车按回执，其余交通、开放时间与票价仍需出发前复核。</p>
+
+  <h3 id="sightseeing" style="scroll-margin-top:80px">每日景点路线 · 从原 PDF 提取并合并</h3>
+  <p>景点来自原 PDF 的第 5–8 页，按现有酒店和已预约列车调整顺序。<b>主线优先，备选不是全部叠加；下方用时仅为游览预算，不是已确认营业时间或交通时刻。</b>景点门票、餐饮、出租车与巴士尚未计入每人费用汇总。</p>
+  <div class="tw"><table style="min-width:920px">
+    <thead><tr><th>日期 / 城市</th><th>推荐游览主线</th><th>原 PDF 备选 / 餐饮</th><th>取舍与衔接</th></tr></thead>
+    <tbody>
+      <tr data-sightseeing="D1"><td><b>D1 · 10/27<br>福冈</b></td><td>完成入境、行李寄存和 JR 取票后，优先走<b><a href="https://you.ctrip.com/sight/fukuoka576/135025.html" target="_blank" rel="noopener noreferrer">栉田神社</a> → <a href="https://you.ctrip.com/sight/fukuoka576/4914274.html" target="_blank" rel="noopener noreferrer">博多千年门</a> → <a href="https://you.ctrip.com/sight/fukuoka576/5267469.html" target="_blank" rel="noopener noreferrer">中洲河畔 / 屋台街</a></b>。神社及千年门先按约 1–1.5 小时散步安排，晚上回 Vista。</td><td>原稿下午三选一：市区步行线；<b>天神地下街 / PARCO</b>；或<b><a href="https://you.ctrip.com/sight/fukuoka576/122861.html" target="_blank" rel="noopener noreferrer">福冈塔</a>＋<a href="https://you.ctrip.com/sight/fukuoka576/1479677.html" target="_blank" rel="noopener noreferrer">百道海滨</a></b>。后两条可替换主线，不默认同日全跑。屋台、明太子玉子烧、关东煮、一兰本社总店、兼虎蘸面为餐饮候选。</td><td>以实际入境及交通耗时为准，到市区晚了就缩短游览。福冈塔 / 海滨需另留往返交通，开放时间待核；主采购放在 10/31，不在首日囤重物。</td></tr>
+      <tr data-sightseeing="D2"><td><b>D2 · 10/28<br>由布院</b></td><td><b>11:31 抵达后处理行李 → <a href="https://you.ctrip.com/sight/yufu57524/2494375.html" target="_blank" rel="noopener noreferrer">汤之坪街道</a> → <a href="https://you.ctrip.com/sight/yufu57524/98194.html" target="_blank" rel="noopener noreferrer">金鳞湖</a> → 清孔苑入住、泡汤</b>。街道与湖畔先留约 2–3 小时，顺路看 <b>Flower 香皂工坊、こぐま咖啡厅</b>；店名沿用原稿，营业与具体位置待核。</td><td>金赏可乐饼、B-speak 蛋糕卷、湖畔むら屋牛料理为原稿餐饮候选；择一用餐或外带，不为排队错过入住。金鳞湖晨雾留作次晨可选项。</td><td>博多 <b>09:17 → 由布院 11:31</b> 已预约。清孔苑不在站旁，先确认接驳和寄存；建议 16:30 回馆，<b>最迟 17:30 前办理入住</b>。含哪两餐及餐时须另确认。</td></tr>
+      <tr data-sightseeing="D3"><td><b>D3 · 10/29<br>由布院 → 别府</b></td><td>天气、早餐与回站交通允许时看<b><a href="https://you.ctrip.com/sight/yufu57524/98194.html" target="_blank" rel="noopener noreferrer">金鳞湖</a>晨雾</b>；退房后去别府。寄存行李再游<b><a href="https://you.ctrip.com/sight/beppu57513/2487762.html" target="_blank" rel="noopener noreferrer">海地狱</a> → <a href="https://you.ctrip.com/sight/beppu57513/2487273.html" target="_blank" rel="noopener noreferrer">血池地狱</a>＋<a href="https://you.ctrip.com/sight/beppu57513/2487000.html" target="_blank" rel="noopener noreferrer">龙卷地狱</a></b>，按实际抵达时间留约 3–4 小时交通与参观；来不及则优先海地狱。</td><td><b><a href="https://you.ctrip.com/sight/beppu57513/1685421.html" target="_blank" rel="noopener noreferrer">别府塔</a>或汤都滨海公园</b>二选一；<b><a href="https://you.ctrip.com/sight/beppu57513/154012692.html" target="_blank" rel="noopener noreferrer">竹瓦温泉</a></b>作为额外浴场体验可选，不与已订御宿野乃馆内泡汤混淆。とよ常、站前居酒屋 / とり天为原稿餐饮候选。</td><td>清孔苑 10:00 前退房，铁路班次待复核，不能先锁死 09:30 开始巡游。海地狱与血池 / 龙卷跨片区，需另留交通，<b>不照搬旧稿“步行 12 分钟”</b>。间歇泉等待、门票、浴场项目及营业时间以现场为准。</td></tr>
+      <tr data-sightseeing="D4"><td><b>D4 · 10/30<br>阿苏</b></td><td>到阿苏站后先寄存行李，再按巴士衔接安排<b><a href="https://you.ctrip.com/sight/aso57504/1699773.html" target="_blank" rel="noopener noreferrer">中岳火口</a>（仅开放时）→ <a href="https://you.ctrip.com/sight/minamiaso61006/85030.html" target="_blank" rel="noopener noreferrer">草千里之滨</a></b>。火口观景遵守现场指引；草千里散步、湖景与拍照先留约 1–2 小时。</td><td>草千里骑马是原稿可选体验，价格与运营待确认。<b>若火口关闭，改为草千里及周边观景</b>；若到站较晚，先保草千里，不为赶旧稿时间追车。</td><td>别府 → 阿苏列车及山上巴士均待核实，<b>上山和下山末班必须一起确认</b>。下山回阿苏站旁万枫，不去内牧，也没有已订旅馆会席晚餐。夜间观星仅作天气和安全条件允许时的可选体验。</td></tr>
+      <tr data-sightseeing="D5"><td><b>D5 · 10/31<br>阿苏 → 熊本</b></td><td>上午以阿苏站周边早餐和短途散步为主；乘已预约列车到熊本，酒店寄存后走<b><a href="https://you.ctrip.com/sight/kumamotocity1191/80931.html" target="_blank" rel="noopener noreferrer">熊本城</a> → <a href="https://you.ctrip.com/sight/kumamotocity1191/1693489.html" target="_blank" rel="noopener noreferrer">城彩苑</a> → <a href="https://you.ctrip.com/sight/kumamotocity1191/4926024.html" target="_blank" rel="noopener noreferrer">下通</a> / <a href="https://you.ctrip.com/sight/kumamotocity1191/2927817.html" target="_blank" rel="noopener noreferrer">上通</a></b>，17:00–19:00 主采购，晚餐后回 THE BLOSSOM 泡大浴场、装箱。</td><td>原稿的<b><a href="https://you.ctrip.com/sight/aso57504/1484435.html" target="_blank" rel="noopener noreferrer">大观峰</a></b>仅在提前确认包车 / 出租车往返并留足回站余量时选，不照搬内牧出发的旧车程和报价。<b><a href="https://you.ctrip.com/sight/kumamotocity1191/1791341.html" target="_blank" rel="noopener noreferrer">KUMAMON 广场</a></b>按当天公布的熊本熊场次取舍；想去<b><a href="https://you.ctrip.com/sight/kumamotocity1191/80905.html" target="_blank" rel="noopener noreferrer">水前寺成趣园</a></b>，只能替换本日下午熊本城 / 熊本熊方案，不叠加。</td><td>万枫 11:00 前退房，建议 11:52 前到站台；<b>阿苏 12:12 → 熊本 13:20</b> 已预约。大观峰方案应计划 10:00 前回万枫，不能保证交通就放弃。熊本城、熊本熊及水前寺不安排同一时间；最晚入场和场次待核。</td></tr>
+      <tr data-sightseeing="D6"><td><b>D6 · 11/1<br>返程</b></td><td><b>不安排景点</b>：早餐、退房 → 熊本至博多早班新干线 → 福冈机场国际航站楼 → MU518。</td><td>原 PDF 的水前寺成趣园返程晨游及博多集中购物不采用；水前寺已作为 D5 替换项保留，购物主要在 D5 完成。</td><td>新干线建议选 08:00–08:30 时段，具体车次待确认。<b>目标 11:00 前到国际航站楼，13:55 起飞</b>；不因游览或购物缩减机场缓冲。</td></tr>
+    </tbody>
+  </table></div>
+  <div class="src">景点原始来源：<a href="archive/九州行程执行手册-指定席·卡点·住宿比价_0414.pdf">已归档原 PDF 第 5–8 页</a>，2026/10/04 按页面图像逐项核对（原文件文字提取有编码错误）。本次仅合并景点与游览取舍，不把旧稿票价、店铺营业、列车 / 巴士时刻或温泉旅馆套餐重新认定为已确认事实。<br><b>HTML 为本地维护源，PDF 仅为导出时的同行分享快照；旧版攻略 PDF 统一放在 archive 文件夹，不作为当前行程依据。</b></div>
+
+  <!-- D1 -->
+  <div class="day">
+    <span class="d">D1</span><span class="dt">10/27 周二</span>
+    <span class="route">上海 → 福冈 · <b>已下单：Vista 中洲川端 · 2 间单人房</b></span>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px">时间</th><th style="width:110px">性质</th><th>事项与卡点</th></tr></thead>
+      <tbody>
+        <tr><td class="time mono">07:50</td><td><span class="b info">建议</span></td><td>浦东 T1 集合。<b>东航 MU517，09:50 起飞</b>。国际航班建议提前 2 小时到，早班机安检排队高峰在 08:00–09:00。</td></tr>
+        <tr><td class="time mono">12:55</td><td><span class="b must">硬点</span></td><td><b>落地福冈机场国际航站楼</b>。先入境、取行李、过海关，再乘接驳巴士至国内航站楼换地铁；<b>不能按仅走连廊、20 分钟后就上地铁安排</b>。</td></tr>
+        <tr><td class="time mono">入境后</td><td><span class="b book">衔接</span></td><td>按实际手续与接驳耗时去博多，办理 JR 取票后往 Vista 寄存。地铁只到 / 从国内航站楼出发；<b>抵市区时间不锁死为 13:40</b>，下午景点随到达时间缩减。</td></tr>
+        <tr><td class="time mono">14:00</td><td><span class="b ok">从容</span></td><td>前往已订 <b>Vista 中洲川端</b>，先询问能否寄存行李；订单正式入住时间为 <b>15:00 后</b>。两间单人房，<b>不含早餐</b>。</td></tr>
+        <tr><td class="time mono">到市区后至傍晚</td><td><span class="b ok">游览</span></td><td><b>推荐栉田神社 → 博多千年门 → 中洲河畔</b>。想去天神地下街 / PARCO 或福冈塔＋百道海滨，就用其替换市区步行线，<b>不把三组景点全部叠加</b>；取票、入住优先。</td></tr>
+        <tr><td class="time mono">18:00</td><td><span class="b ok">从容</span></td><td>中洲屋台街或博多站周边觅食（明太子玉子烧、关东煮、一兰本社总店、兼虎蘸面）。</td></tr>
+        <tr><td class="time mono">21:30</td><td><span class="b must">硬点</span></td><td><b>21:30 前吃完回酒店。</b>屋台 22:00 后客流散去，游客独行不便。<b>屋台只收现金</b>，人均 ¥60–90。</td></tr>
+        <tr><td class="time mono">睡前</td><td><span class="b book">准备</span></td><td>便利店买次日早餐。<b>由布院面包房 10 点才开门</b>，早晨只能靠便利店。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note tip"><b>D1 景点取舍：</b>MU517 落地较早，但实际可玩时长需扣除入境、行李、接驳、取票和入住。<b>优先栉田神社、博多千年门与中洲一带</b>；天神或百道只择一替换，不保证落地后有完整 4 小时游览。</div>
+
+  <div class="note amber"><b>提示：</b>优先在博多站 JR 九州指定窗口兑换通票、领取两趟已预约列车的纸质指定席券；窗口地点和营业时间出发前确认。<b>取票未完成时先处理取票，再安排景点</b>；若留到 D2，需为排队预留余量，不以旧稿机场窗口 17:00 的说法保证办理成功。</div>
+
+  <!-- D2 -->
+  <div class="day">
+    <span class="d">D2</span><span class="dt">10/28 周三</span>
+    <span class="route">博多 → 由布院 · <b>已下单：清孔苑日式旅馆</b></span>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px">时间</th><th style="width:110px">性质</th><th>事项与卡点</th></tr></thead>
+      <tbody>
+        <tr><td class="time mono">08:30 前</td><td><span class="b book">待办</span></td><td><b>若 10/27 尚未办理，提前到博多站 JR 九州指定售票窗口。</b>兑换北九州 5 日券并领取已预约的指定席券；携带护照、兑换凭证、预约回执及预订时使用的信用卡。回执要求至少提前 30 分钟取票，另需为窗口排队留余量。</td></tr>
+        <tr><td class="time mono">09:17</td><td><span class="b must">硬点</span></td><td><b>由布院之森 1 号发车</b>（博多 09:17 → 由布院 11:31）。<span class="b ok">座位已预约</span> 4 号车 15D、6C；请先领取纸质指定席券，再提前到站台候车。</td></tr>
+        <tr><td class="time mono">11:31</td><td><span class="b ok">从容</span></td><td>抵达由布院。已订<b>清孔苑位于站北侧，带行李优先预约接驳或乘出租车</b>；接驳、提前寄存行李均需先问旅馆，不能按“温泉街步行 10 分钟即到酒店”安排。</td></tr>
+        <tr><td class="time mono">处理行李后至 16:00</td><td><span class="b ok">游览</span></td><td><b>由布院站 → 汤之坪街道 → 金鳞湖</b>，顺路看 Flower 香皂工坊、こぐま咖啡厅；店铺营业及具体位置待核。金赏可乐饼、B-speak 蛋糕卷、湖畔むら屋牛料理择一，不为排队错过清孔苑入住。</td></tr>
+        <tr><td class="time mono">16:30</td><td><span class="b must">硬点</span></td><td>回清孔苑办理入住、泡汤。<b>订单入住窗口为当地时间 15:00–17:30，非 24 小时前台，务必 17:30 前到馆。</b></td></tr>
+        <tr><td class="time mono">餐时待确认</td><td><span class="b book">待办</span></td><td>订单含两人两餐，但凭证只写早 / 午 / 晚餐中安排两餐。<b>请确认是否早＋晚及供餐时段</b>，不把原稿“18:00 怀石晚餐”当作已确认安排。</td></tr>
+        <tr><td class="time mono">21:00</td><td><span class="b ok">从容</span></td><td>夜汤后早睡——明天要赶金鳞湖晨雾。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- D3 -->
+  <div class="day">
+    <span class="d">D3</span><span class="dt">10/29 周四</span>
+    <span class="route">由布院 → 别府 · <b>已下单：御宿野乃别府</b></span>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px">时间</th><th style="width:110px">性质</th><th>事项与卡点</th></tr></thead>
+      <tbody>
+        <tr><td class="time mono">07:00</td><td><span class="b book">建议</span></td><td><b>金鳞湖晨雾为可选项。</b>清孔苑不是由布院站旁酒店，往返湖区、用餐和回站需预留交通时间；不按“旅馆步行即到”卡死行程。</td></tr>
+        <tr><td class="time mono">早餐时段待确认</td><td><span class="b book">待办</span></td><td>先确认两餐是否含早餐及供餐时间，再决定晨间游览与列车。<b>清孔苑当地时间 10:00 前退房</b>；提前预约回站接驳，或安排出租车。</td></tr>
+        <tr><td class="time mono">班次待复核</td><td><span class="b book">待办</span></td><td><b>由布院站 → 大分站换乘 → 别府站</b>，按久大本线＋日丰本线衔接；原稿 08:39 / 09:32 未在本轮核实，不作为已确认发车时刻。到别府站后步行至已订御宿野乃；正式入住 15:00 后，<b>不含早餐</b>。</td></tr>
+        <tr><td class="time mono">抵别府、寄存后</td><td><span class="b ok">游览</span></td><td><b>铁轮海地狱 → 血池地狱＋龙卷地狱</b>。先查巴士或出租车衔接；后两处与海地狱跨片区，不能按步行 12 分钟安排。参观与交通先留约 3–4 小时，到得晚则只保海地狱。<b>门票、巴士班次和间歇泉等待以当日信息为准</b>，不沿用旧稿套票 ¥1,200 或“整点喷发”说法。</td></tr>
+        <tr><td class="time mono">按抵达 / 游览衔接</td><td><span class="b ok">从容</span></td><td>午餐候选とよ常；有余量再在<b>别府塔或汤都滨海公园</b>二选一，不因加景点压缩入住和晚餐。</td></tr>
+        <tr><td class="time mono">傍晚可选</td><td><span class="b book">建议</span></td><td><b>竹瓦温泉</b>作为额外浴场体验，先确认普通浴 / 砂汤项目、营业、预约及费用，不沿用旧稿 ¥200。也可直接回御宿野乃泡馆内温泉，减少往返。</td></tr>
+        <tr><td class="time mono">22:00</td><td><span class="b ok">从容</span></td><td>别府站周边居酒屋/とり天。站前 22:00 前仍灯火通明。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- D4 -->
+  <div class="day">
+    <span class="d">D4</span><span class="dt">10/30 周五</span>
+    <span class="route">别府 → 阿苏 · <b>已下单：熊本阿苏万枫（阿苏站旁）</b></span>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px">时间</th><th style="width:110px">性质</th><th>事项与卡点</th></tr></thead>
+      <tbody>
+        <tr><td class="time mono">班次待复核</td><td><span class="b book">待办</span></td><td>御宿野乃退房后步行至别府站，优先查当日<b>九州横断特急往阿苏的直达班次</b>；若无适合直达车，再核对大分经丰肥本线的换乘方案。原稿 07:44 / 10:08 未在本轮核实，不作为已确认车次。</td></tr>
+        <tr><td class="time mono">抵阿苏后</td><td><span class="b ok">从容</span></td><td>已订<b>万枫酒店位于阿苏站附近</b>，先询问酒店能否提前寄存行李，无法寄存再用站内投币柜。<b>当天不需要去内牧住宿；正式入住为 15:00 后。</b></td></tr>
+        <tr><td class="time mono">按实际到站衔接</td><td><span class="b book">待确认</span></td><td><b>阿苏站前 → 草千里 / 阿苏山上</b>，先核对上山与回程末班巴士，再决定火口和草千里顺序。旧稿 11:10 上山及车费仅是旧安排，<b>不能在列车未定时当作已确认衔接</b>。</td></tr>
+        <tr><td class="time mono">抵山上后</td><td><span class="b book">准备</span></td><td>先确认火口开放，再查<b>中岳火口接驳</b>是否运营；班次、票价、付款及回程条件以现场为准。不把旧稿 11:45 抵达及 ¥600 单程价当作已确认安排；JR 通票不覆盖这段接驳。</td></tr>
+        <tr><td class="time mono">开放且交通允许时</td><td><span class="b book">建议</span></td><td><b>中岳火口观景。</b>先查官方开放状态，并遵守现场管制、封闭与疏散指引；有呼吸系统等疾病者查看官方进入限制。<b>湿毛巾、口罩不能作为有害火山气体的防护保证</b>。关闭时不进入，改游草千里；出发前一晚及当天再查 aso-vc.jp。</td></tr>
+        <tr><td class="time mono">山上游览时段</td><td><span class="b ok">游览</span></td><td><b>草千里之滨</b>散步、湖景及草原拍照，先预留约 1–2 小时。骑马为可选项目，运营与价格另查，不沿用旧稿 ¥2,000/圈；回程巴士优先。</td></tr>
+        <tr><td class="time mono">16:00</td><td><span class="b must">硬点</span></td><td><b>开始下山，目的地改为阿苏站。</b>站前步行回万枫办理入住，不再绕行内牧。务必在草千里站牌<b>确认当日末班并拍照留存</b>。</td></tr>
+        <tr><td class="time mono">当日末班前</td><td><span class="b must">硬点</span></td><td><b>必须保住实际运营的下山末班车。</b>旧稿写 16:30 下山、17:03 到阿苏站及 16:15 火口接驳返回，<b>本次未复核，不能按这些时刻保证有车</b>。上山前确认并拍照记录当日末班；按实际末班提前结束游览。</td></tr>
+        <tr><td class="time mono">18:00</td><td><span class="b book">准备</span></td><td>万枫订单<b>无餐食，不含晚餐和早餐</b>。提前安排站周边餐饮或外带，并确认次日早餐；不沿用温泉旅馆的会席晚餐安排。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- D5 -->
+  <div class="day">
+    <span class="d">D5</span><span class="dt">10/31 周六</span>
+    <span class="route">阿苏 → 熊本 · <b>已下单：THE BLOSSOM（熊本站旁）</b></span>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px">时间</th><th style="width:110px">性质</th><th>事项与卡点</th></tr></thead>
+      <tbody>
+        <tr><td class="time mono">上午</td><td><span class="b ok">游览</span></td><td>主线是阿苏站周边早餐与短途散步，万枫没有馆内朝汤。原 PDF 的<b>大观峰</b>仅作已确认往返车辆时的可选项：计划 10:00 前回万枫，留出退房、取行李与候车余量；<b>不照搬内牧出发约 20 分钟的旧车程 / 报价</b>，交通没保障就不去。</td></tr>
+        <tr><td class="time mono">11:00 前</td><td><span class="b must">硬点</span></td><td><b>万枫退房并取回行李</b>，步行前往阿苏站；不需要从内牧接驳，也不改到宫地上车。建议 11:52 前到阿苏站站台候车。</td></tr>
+        <tr><td class="time mono">12:12</td><td><span class="b must">硬点</span></td><td><b>阿苏 BOY! 2 号从阿苏站发车</b>（阿苏 12:12 → 熊本 13:20）。<span class="b ok">座位已预约</span> 4 号车 7C、7D；请先领取纸质指定席券，并提前 20 分钟到阿苏站站台候车。</td></tr>
+        <tr><td class="time mono">13:20</td><td><span class="b ok">从容</span></td><td>抵达熊本，按车站 / AMU PLAZA 指引步行前往<b>已订 THE BLOSSOM KUMAMOTO</b>，询问提前寄存行李；正式入住为 <b>15:00 后</b>。订单不含早餐，非下通商圈酒店。</td></tr>
+        <tr><td class="time mono">14:30–17:00</td><td><span class="b ok">游览</span></td><td><b>熊本城 → 城彩苑</b>，先查当日最晚入场及市电衔接。若看熊本熊场次，则提前结束城内游览；想去<b>水前寺成趣园</b>，用它替换本日下午城 / 熊本熊方案，不能全部叠加。</td></tr>
+        <tr><td class="time mono">场次待确认</td><td><span class="b book">可选</span></td><td><b>KUMAMON 广场</b>按当天公布的出勤场次安排，不把原稿 16:00–17:00 当作固定演出保证。若有合适下午场次，应缩短熊本城参观并留交通、排队时间；没有场次就保留城彩苑与购物。</td></tr>
+        <tr><td class="time mono">17:00–19:00</td><td><span class="b ok">购物</span></td><td><b>下通 / 上通商圈集中采购药妆、润唇膏等</b>，接在景点游览后，不改动两趟已预约 JR。品牌先按常见 DHC 润唇膏理解，若确为其他品牌另核；具体门店营业时间、库存和退税条件待确认。熊本站 / AMU 周边只作补漏。</td></tr>
+        <tr><td class="time mono">19:00</td><td><span class="b ok">从容</span></td><td>下通/上通商圈夜食：马肉刺身、勝烈亭、胜利一路饮食街深夜食堂。</td></tr>
+        <tr><td class="time mono">晚餐后</td><td><span class="b book">准备</span></td><td>回 THE BLOSSOM 办理入住、泡大浴场并整理购物品与行李。<b>返程前一晚完成装箱，11/1 不安排专门购物或水前寺游览。</b>新增购物支出收到实付金额后再记入费用汇总。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- D6 -->
+  <div class="day">
+    <span class="d">D6</span><span class="dt">11/1 周日</span>
+    <span class="route">熊本 → 博多 → 上海</span>
+  </div>
+  <div class="note warn" style="margin-top:0;border-radius:0">
+    <b>⚠ D6 按 MU518 13:55 起飞倒排，以下均为日本当地时间。</b>目标 <b>11:00 前到福冈机场国际航站楼</b>，按提前 2.5 小时计算不晚于 11:25；实际仍以航司值机、托运和登机截止为准。<b>熊本建议选 08:00–08:30 时段的新干线，返程上午只安排早餐、退房和赶车。</b>计划时间不是已核实列车时刻，不再使用原 11:20 晚发车或临起飞才值机的方案。
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:88px">时间</th><th style="width:110px">性质</th><th>事项与卡点</th></tr></thead>
+      <tbody>
+        <tr><td class="time mono">07:00–07:45</td><td><span class="b book">准备</span></td><td>早餐、退房、取齐行李。THE BLOSSOM 在熊本站旁，步行进站；<b>按最终选定班次提前至少 20 分钟到站台</b>。订单不含早餐，另行安排。</td></tr>
+        <tr><td class="time mono">08:00–08:30</td><td><span class="b book">选车窗口</span></td><td><b>熊本 → 博多，九州新干线。</b>本段可用 JR 北九州 5 日券；提前确认当日班次并划普通车指定席。按停站约 35–60 分钟预留，<b>目标 09:30 前抵博多</b>；此时间窗不是已确认车次，不沿用旧手册列车号。</td></tr>
+        <tr><td class="time mono">09:30 前</td><td><span class="b ok">到达目标</span></td><td>抵达博多后直接转机场交通，不安排商场、药妆或站内长时间午餐。若列车延误，优先检查航班余量并调整机场交通，不为购物继续停留。</td></tr>
+        <tr><td class="time mono">10:00 前</td><td><span class="b must">出发目标</span></td><td><b>离开博多前往福冈机场国际航站楼。</b>常规路线：福冈市地铁空港线至福冈机场站（国内航站楼）→ 按指引乘国际线接驳巴士。<b>地铁不含在 JR 通票内，须另付费；到机场站不等于已到国际线。</b>含候车、步行和换乘先预留 45–60 分钟，实际以当日交通为准。</td></tr>
+        <tr><td class="time mono">11:00 前</td><td><span class="b must">到达目标</span></td><td><b>到达国际航站楼，优先办理值机、托运及安检。</b>按提前 2.5 小时计算不晚于 11:25；不是航司最后接收时间的保证。午餐与少量补买放在办理手续后、有余量时进行，机场库存不保证。</td></tr>
+        <tr><td class="time mono">13:55</td><td><span class="b must">硬点</span></td><td>东航 <b>MU518 起飞</b>，福冈 → 上海浦东。<b>15:10 抵达浦东 T1</b>。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <b>D6 时间账（计划窗口，待确认实际班次）：</b>
+    <br>熊本 08:00–08:30 时段乘新干线 → 目标 09:30 前到博多 → 10:00 前转机场交通 → 目标 11:00 前到国际航站楼 → MU518 13:55 起飞。
+    <br><b>不再推荐 11:20 才离开熊本，也不安排返程上午水前寺或博多主采购。</b>列车及交通时刻确认后再细化，航班若再次调整应重新倒排。
+  </div>
+
+  <div class="note tip">
+    <b>通票与购物安排：</b>10/28、10/29、10/30、10/31、11/1 共连续 5 天，<b>11/1 熊本 → 博多仍在通票有效期和适用范围内</b>；提前离开不影响使用。地铁、出租车和普通机场巴士不在 JR 通票内。<b>购物集中在 10/31 熊本，11/1 以赶飞机为优先。</b>依据：<a href="https://www.jrkyushu.co.jp/english/railpass/railpass.html" target="_blank" rel="noopener noreferrer">JR 九州通票适用范围</a>、<a href="https://www.fukuoka-airport.jp/en/access/subway.html" target="_blank" rel="noopener noreferrer">福冈机场地铁说明</a>及<a href="https://www.fukuoka-airport.jp/en/access/bus2.html" target="_blank" rel="noopener noreferrer">国内线 / 国际线接驳</a>；核对 2026/10/04。机场交通费用待实际支付后再记入预算，不重复增加熊本 → 博多车票。
+  </div>
+
+  <div class="grid2">
+    <div class="note amber" style="margin-top:0">
+      <b>三个最容易被忽略的硬点</b>
+      <ul class="clean" style="margin-bottom:0">
+        <li><b>D2 08:30 划位窗口</b>——不划位则由布院之森上不了车。</li>
+        <li><b>D4 当日下山末班巴士</b>——上山前确认，按实际运营时刻提前结束游览。</li>
+        <li><b>D6 目标 11:00 前到国际航站楼</b>——MU518 13:55 起飞，不把国内线地铁站当作国际线到达点。</li>
+      </ul>
+    </div>
+    <div class="note tip" style="margin-top:0">
+      <b>弹性最大的三处</b>
+      <ul class="clean" style="margin-bottom:0">
+        <li>D3 别府地狱巡游——三小时节奏，可长可短。</li>
+        <li>D4 草千里停留时长——由实际到站、上山及末班巴士倒排。</li>
+        <li>D1 下午半天——MU517 落地早，博多市区随便逛。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOTEL ============ -->
+<section id="hotel">
+  <h2><span class="num">3</span>已下单住宿、交通与备选价格</h2>
+  <p class="lead">五晚酒店均已有订单凭证。优先看下方已下单清单：10/27 为两间单人房，其余为一间双人入住；早餐与取消政策以订单为准，不沿用比价套餐条款。后面的实时比价仅保留为备选参考。</p>
+
+  <h3 id="trip-cost" style="scroll-margin-top:80px">目前每人费用汇总 · 2026/10/04</h3>
+  <div class="note tip"><b>当前已知项目预算约 CNY 6,512.09 / 人，两人合计约 CNY 13,024.17。</b><br>按两位成人、酒店费用均摊；包含四晚酒店确认单已付金额、已列到店税费、往返机票、待购 JR 北九州 5 日券及两次指定席费用。<b>不含 10/29 Klook 房费及未列明税费，不是完整旅行总价，也不是全部已支付金额。</b></div>
+  <div class="tw"><table style="min-width:760px">
+    <thead><tr><th>项目</th><th>两人合计 CNY</th><th>每人 CNY</th><th>依据 / 状态</th></tr></thead>
+    <tbody>
+      <tr data-cost="hotel-paid"><td><b>四晚酒店已付房费（含凭证所列税费）</b></td><td>6,159.70</td><td>3,079.85</td><td>10/27、10/28、10/30、10/31 四份确认单；10/27 两间单人房已计入，按凭证 1,238.41，不再按口述 1,200。已含税费不重复相加。</td></tr>
+      <tr data-cost="klook-pending"><td><b>10/29 御宿野乃别府 · Klook</b></td><td></td><td></td><td><b>金额留空，收到价格后再纳入汇总；不是零元。</b></td></tr>
+      <tr data-cost="hotel-arrival-tax"><td>酒店已列到店另付税费</td><td>≈80.87</td><td>≈40.44</td><td>Vista JPY 1,000 ≈42.59；清孔苑 JPY 500 ≈21.29；BLOSSOM 16.99。沿用确认单估算；其他未列明税费尚未计入。</td></tr>
+      <tr data-cost="flights"><td><b>往返机票</b></td><td>5,080.00</td><td>2,540.00</td><td>用户确认每人往返 2,540 元，不再乘两次。</td></tr>
+      <tr data-cost="jr-pass"><td><b>JR 北九州 5 日券 · 成人</b></td><td>≈1,448.06</td><td>≈724.03</td><td><b>尚未购买：每人 JPY 17,000，两人 JPY 34,000。</b>按 <a href="https://www.jrkyushu.co.jp/english/railpass/railpass.html#anchor-typesprices" target="_blank" rel="noopener noreferrer">JR 九州官网标准价</a>预算；官网提示线上渠道价格可能不同，购买后改为实付金额。</td></tr>
+      <tr data-cost="reserved-seats"><td><b>10/28 由布院之森 ＋ 10/31 阿苏 BOY! 指定席</b></td><td>≈255.54</td><td>≈127.77</td><td>用户确认<b>每人两次合计 JPY 3,000，两人 JPY 6,000</b>。只计这项已确认的预约费用，不额外叠加两段普通车票。</td></tr>
+    </tbody>
+    <tfoot><tr data-cost="known-total"><td><b>已知项目预算小计（Klook 未计入）</b></td><td><b>≈13,024.17</b></td><td><b>≈6,512.09</b></td><td>保留两人总额计算后再均摊；每人明细存在分币四舍五入。</td></tr></tfoot>
+  </table></div>
+  <div class="note info"><b>换算与后续补价：</b>JR 通票＋指定席合计为每人 <b>JPY 20,000</b>，按确认单 JPY 1,000 ≈ CNY 42.59 的隐含口径 <b>1 JPY ≈ CNY 0.04259</b>暂估为 CNY 851.80 / 人；<b>这不是 2026/10/04 实时汇率或信用卡实付汇率</b>。不含到店另付税费的小计为 <b>CNY 6,471.65 / 人</b>，加已列税费后约 <b>CNY 6,512.09 / 人</b>。收到 Klook 两人房费后，每人增加其金额的一半；购买通票后用实际人民币金额替换预算。餐饮、景点门票、火山巴士、地铁、出租车等未包含。</div>
+
+  <h3 id="hotel-booked">已下单酒店 · 订单核对 2026/10/04</h3>
+  <p><b>泡汤设施核对 2026/10/04：</b>下表红色粗体标出酒店内可泡汤的设施，区分温泉与普通大浴场；不代表已订房间带私汤。使用时间、费用、私汤预约及临时停用以酒店通知为准。携程酒店页可能要求登录；酒店介绍不替代实际订单条款。</p>
+  <div class="note warn"><b>重要：清孔苑最早需在北京时间 10/13 23:00 前取消才免费。</b>其已订房型是“标准日式客房 10 榻榻米，无烟”，尚未证明有两张单人床，请向酒店 / 平台确认；不要把此前混合房比价当作本订单床型。别府 Klook 凭证未提供取消条款和金额，这两项仍需补订单详情。</div>
+  <div class="tw"><table style="min-width:1200px">
+    <thead><tr><th>住宿日期 / 状态</th><th>已订酒店 / 房型 / 泡汤设施</th><th>早餐 / 吸烟政策</th><th>免费取消截止（重要）</th><th>订单金额 / 含税口径 CNY</th><th>凭证 / 入离时间</th></tr></thead>
+    <tbody>
+      <tr data-booking="2026-10-27"><td>10/27 → 10/28<br><b class="b ok">已下单 · 已支付</b></td><td><b>福冈中洲川端远景酒店 / Hotel Vista Fukuoka Nakasu-Kawabata</b><br><a href="https://hotels.ctrip.com/hotels/detail/?hotelId=39481533" target="_blank" rel="noopener noreferrer">携程酒店页</a><br>淋浴单人房；<b>2 间单人房 / 2 人</b>（房数按用户确认，每间最多 1 人）<br><b class="bath-available">可泡汤：酒店公共大浴场</b><br>不按天然温泉标注；所订单人房为淋浴房<br><a href="https://www.trip.com/hotels/detail/?cityId=248&amp;hotelId=39481533" target="_blank" rel="noopener noreferrer">浴场资料（Trip.com）</a></td><td><b>不含早餐</b><br>订单未说明吸烟政策</td><td><b class="time">北京时间 10/22 21:00 前</b><br>日本时间 10/22 22:00 前；之后扣全额预付款</td><td><b>凭证已付 1,238.41</b>（凭证含税费 0）<br>到店另付 JPY 1,000，凭证估算 ≈42.59<br><b>按凭证含已知税费合计 ≈1,281.00</b><br>本次汇总按确认单金额，不按口述 1,200</td><td><a href="2026-10-27/hotels/ConfirmationLetter_INTL_454601710934_10-27.pdf">10/27 订单 PDF</a><br>15:00–次日 00:00 入住（非 24 小时前台）<br>07:00–10:00 退房</td></tr>
+      <tr data-booking="2026-10-28"><td>10/28 → 10/29<br><b class="b ok">已下单 · 已支付</b></td><td><b>由布院清孔苑日式旅馆 / Yufuin Ryokan Seikoen</b><br><a href="https://hotels.ctrip.com/hotels/detail/?hotelId=7603633" target="_blank" rel="noopener noreferrer">携程酒店页</a><br>标准日式客房 10 榻榻米，无烟；最多 2 人<br><b class="time">两张单人床未确认，需核实</b><br><b class="bath-available">可泡汤：酒店温泉设施</b><br>私汤使用条件另询；本订单未注明房内私汤<br><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=7603633" target="_blank" rel="noopener noreferrer">温泉设施资料（Trip.com）</a></td><td><b>两人两餐；是否含早餐待确认</b><br>凭证说明从早 / 午 / 晚餐中安排两餐，不能直接认定一泊二食为早＋晚<br><b>禁烟 / Non-smoking</b></td><td><b class="time">北京时间 10/13 23:00 前</b><br>日本时间 10/14 00:00 前<br>此后至北京时间 10/20 23:00 前取消扣 997.89；再之后扣全额预付款</td><td><b>已付 1,995.81</b>，已含税费 236.62（不重复加）<br>到店另付 JPY 500 温泉税，凭证估算 ≈21.29<br><b>含已知税费合计 ≈2,017.10</b></td><td><a href="2026-10-27/hotels/ConfirmationLetter_INTL_454600456638_10-28.pdf">10/28 订单 PDF</a><br><b>15:00–17:30 入住（非 24 小时前台）</b><br>10:00 前退房；餐时需联系旅馆确认</td></tr>
+      <tr data-booking="2026-10-29"><td>10/29 → 10/30<br><b class="b ok">已下单 · 已支付</b></td><td><b>别府八汤 御宿野乃别府 / Beppu Hatto Onyado Nono Beppu</b><br><a href="https://hotels.ctrip.com/hotels/detail/?hotelId=112864248" target="_blank" rel="noopener noreferrer">携程酒店页</a><br>1 间 / 2 成人；禁烟双床房<br><b>2 张加大单人床</b>（Klook 凭证）<br><b class="bath-available">可泡汤：酒店温泉设施</b><br>公共浴池与私汤使用规则以酒店为准；别府地狱景点是观赏，不是酒店浴池<br><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=112864248" target="_blank" rel="noopener noreferrer">温泉设施资料（Trip.com）</a></td><td><b>不含早餐</b><br><b>禁烟 / Non-smoking</b></td><td><b class="time">未提供，待补 Klook 取消条款</b><br>不得用下方 Trip.com 比价套餐的截止时间代替</td><td><b>凭证显示已支付，但没有金额</b><br>当地住宿税可能到店另付；金额未说明<br><b>含税总价暂无法计算</b></td><td><a href="2026-10-27/hotels/微信图片_20261004162909_461_709_10-29.jpg">10/29 Klook 图片凭证</a><br>15:00 后入住；11:00 前退房</td></tr>
+      <tr data-booking="2026-10-30"><td>10/30 → 10/31<br><b class="b ok">已下单 · 已支付</b></td><td><b>熊本阿苏万枫酒店 / Fairfield by Marriott Kumamoto Aso</b><br><a href="https://hotels.ctrip.com/hotels/detail/?hotelId=112335329" target="_blank" rel="noopener noreferrer">携程酒店页</a><br><b>标准双床房，2 张单人床</b>；最多 2 人<br>阿苏站附近，不是内牧温泉<br><b>馆内无泡汤设施；客房仅淋浴，无浴缸</b><br>周边温泉需另行前往，不属于酒店服务<br><a href="https://fairfield-michinoeki-japan.com/faq" target="_blank" rel="noopener noreferrer">设施说明（万枫官网 FAQ）</a></td><td><b>不含早餐（无餐食）</b><br>订单未说明吸烟政策；此前同名房型比价为禁烟，需以实际订单再确认</td><td><b class="time">北京时间 10/29 22:59 前</b><br>日本时间 10/29 23:59 前；之后扣全额预付款</td><td><b>已付含税费 1,190.29</b><br>其中税费 227.81（已含，不重复加）<br>凭证保留到店可能另收其他税费提示，金额未给出</td><td><a href="2026-10-27/hotels/ConfirmationLetter_INTL_454600334330_1030.pdf">10/30 订单 PDF</a><br>15:00 后入住；11:00 前退房</td></tr>
+      <tr data-booking="2026-10-31"><td>10/31 → 11/01<br><b class="b ok">已下单 · 已支付</b></td><td><b>The Blossom 熊本 / THE BLOSSOM KUMAMOTO</b><br><a href="https://hotels.ctrip.com/hotels/detail/?hotelId=70181290" target="_blank" rel="noopener noreferrer">携程酒店页</a><br>日式豪华双床房 -NAGOMI-【禁烟】；最多 2 人<br>确认单已核实双床房名称，但未单列单人床数量<br><b class="bath-available">可泡汤：住客专用大浴场</b><br>不按天然温泉标注；设施开放以酒店通知为准<br><a href="https://www.jrk-hotels.co.jp/Kumamoto/facilities/" target="_blank" rel="noopener noreferrer">浴场资料（酒店官网）</a></td><td><b>不含早餐（无餐食）</b><br><b>禁烟 / Non-smoking</b></td><td><b class="time">北京时间 10/27 23:00 前</b><br>日本时间 10/28 00:00 前<br>此后：北京 10/29 23:00 前扣 347.04；10/30 23:00 前扣 867.60；10/31 22:00 前扣 1,388.16；再之后扣全额预付款</td><td><b>已付 1,735.19</b>，已含税费 223.85（不重复加）<br>到店另付住宿税 16.99（凭证人民币估算）<br><b>含已知税费合计 ≈1,752.18</b></td><td><a href="2026-10-27/hotels/ConfirmationLetter_INTL_454600847789_10-31.pdf">10/31 订单 PDF</a><br>15:00–次日 00:00 入住（非 24 小时前台）<br>11:00 前退房</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note info"><b>酒店确认单金额合计：</b>四份 PDF 已付金额 1,238.41＋1,995.81＋1,190.29＋1,735.19＝<b>CNY 6,159.70</b>。加凭证已列的到店税费估算 42.59＋21.29＋16.99＝80.87，<b>四晚含已知税费合计约 CNY 6,240.57</b>。<b class="time">五晚总价仍缺 10/29 Klook 实付金额及未列明的当地税费，不能写成完整五晚含税总价。</b>JPY 折算均沿用订单凭证估算，不是本日实时汇率；到店应付以 JPY 原币及最终账单为准。</div>
+
+  <h3 id="hotel-transport">已订酒店交通地图与换乘方式</h3>
+  <p>10/27 Vista（福冈） → 10/28 清孔苑（由布院） → 10/29 御宿野乃（别府） → 10/30 万枫（阿苏） → 10/31 THE BLOSSOM（熊本）。酒店坐标来自 Trip.com 公开位置数据；地址与订单核对。<b>地图虚线只表示酒店间出行顺序，不是实际铁路 / 公路轨迹，不可用于逐转弯导航。</b></p>
+  <button id="hotel-map-load" class="map-load" type="button">加载在线地图</button>
+  <div id="hotel-map" class="hotel-map" role="region" aria-label="五家已订酒店的 OpenStreetMap 地理位置与交通顺序" hidden></div>
+  <div id="hotel-map-fallback" class="hotel-map-fallback">
+    <svg viewBox="0 0 900 540" role="img" aria-labelledby="hotel-map-title hotel-map-description" xmlns="http://www.w3.org/2000/svg">
+      <title id="hotel-map-title">九州五晚酒店地理位置示意</title>
+      <desc id="hotel-map-description">北在上。福冈位于西北，由布院和别府位于东侧，阿苏在中南部，熊本在西南。编号为入住顺序。虚线不表示实际铁路轨迹。</desc>
+      <rect width="900" height="540" fill="#eef4f5"/>
+      <g stroke="#d4dfe3" stroke-width="1"><path d="M80 70H820M80 210H820M80 350H820M80 490H820M80 70V490M265 70V490M450 70V490M635 70V490M820 70V490"/></g>
+      <g fill="#4a5259" font-size="13"><text x="20" y="74">33.6°N</text><text x="20" y="214">33.3°N</text><text x="20" y="354">33.0°N</text><text x="20" y="494">32.7°N</text><text x="80" y="518">130.3°E</text><text x="410" y="518">130.9°E</text><text x="748" y="518">131.5°E</text><text x="30" y="30">北 N</text><text x="600" y="30">地理位置示意 · 非铁路轨迹</text></g>
+      <g fill="none" stroke-width="3" stroke-dasharray="8 7"><path d="M138 72L650 222" stroke="#1d5fa8"/><path d="M650 222L722 220" stroke="#b26a00"/><path d="M722 220L497 379" stroke="#1b7f4b"/><path d="M497 379L287 448" stroke="#c62828"/></g>
+      <g fill="#1b7f4b" stroke="#fff" stroke-width="3"><circle cx="138" cy="72" r="16"/><circle cx="650" cy="222" r="16"/><circle cx="722" cy="220" r="16"/><circle cx="497" cy="379" r="16"/><circle cx="287" cy="448" r="16"/></g>
+      <g fill="#fff" font-size="14" font-weight="700" text-anchor="middle"><text x="138" y="77">1</text><text x="650" y="227">2</text><text x="722" y="225">3</text><text x="497" y="384">4</text><text x="287" y="453">5</text></g>
+      <g fill="#1a1d21" font-size="15" font-weight="700"><text x="162" y="65">10/27 福冈 · Vista</text><text x="452" y="190">10/28 由布院 · 清孔苑</text><text x="737" y="251">10/29 别府</text><text x="737" y="273">御宿野乃</text><text x="518" y="382">10/30 阿苏 · 万枫</text><text x="70" y="456">10/31 熊本 · BLOSSOM</text></g>
+      <g fill="#4a5259" font-size="13"><text x="248" y="130">地铁＋<a href="https://you.ctrip.com/sight/yufu57524/2498865.html" target="_blank" rel="noopener noreferrer"><tspan fill="#1d5fa8" text-decoration="underline">由布院之森</tspan></a>＋接驳 / 出租车</text><text x="507" y="270">由布院 → 大分换乘 → 别府</text><text x="615" y="328">九州横断特急优先</text><text x="300" y="400"><a href="https://you.ctrip.com/sight/kumamotocity1191/1786697.html" target="_blank" rel="noopener noreferrer"><tspan fill="#1d5fa8" text-decoration="underline">阿苏 BOY!</tspan></a>＋站前步行</text></g>
+    </svg>
+  </div>
+  <div class="map-legend"><span>1 福冈 Vista</span><span>2 由布院清孔苑</span><span>3 别府御宿野乃</span><span>4 阿苏万枫</span><span>5 熊本 THE BLOSSOM</span><span>虚线：顺序示意，不是实际行车线路</span></div>
+  <div class="tw"><table style="min-width:1000px">
+    <thead><tr><th>移动日 / 酒店</th><th>具体衔接方式</th><th>用时 / 时刻</th><th>行李 / 必须提前确认</th></tr></thead>
+    <tbody>
+      <tr><td><b>10/28 · Vista → 清孔苑</b></td><td>Vista 步行至中洲川端站 → 地铁空港线往博多 → 博多站换 JR 由布院之森 1 号 → 由布院站 → 旅馆接驳（先确认）或出租车至清孔苑。地铁及出租车不含在 JR Pass 内。</td><td><b>已预约：博多 09:17 → 由布院 11:31</b>，车上 2 小时 14 分。酒店到博多站建议额外留 30–45 分钟；由布院站到旅馆建议留 15–30 分钟交通缓冲（估算，不是已订接驳时刻）。</td><td>先领 JR 纸质指定席券；旅馆位置偏站北侧，带箱子不建议直接步行上坡。接驳、寄存需询问。<b>清孔苑 17:30 前办理入住。</b></td></tr>
+      <tr><td><b>10/29 · 清孔苑 → 御宿野乃</b></td><td>接驳或出租车回由布院站 → JR 久大本线至大分 → JR 日丰本线往别府 → 别府站出站步行至御宿野乃。亦可另查由布院往别府巴士，但未核实当日班次及停车点，不作为默认方案。</td><td>铁路加换乘先按 <b>约 1.5–2 小时</b>安排，再加旅馆回站交通；全程预算约 2–2.5 小时。估算仅供计划，<b>当日发车及大分换乘待核实</b>。别府站至酒店为近站步行。</td><td>清孔苑早餐是否提供及时间先确认；10:00 前退房。御宿野乃 15:00 后入住，提早到达可询问寄存。Klook <b>免费取消截止仍待补</b>。</td></tr>
+      <tr><td><b>10/30 · 御宿野乃 → 阿苏万枫</b></td><td>酒店步行至别府站 → 优先查九州横断特急往阿苏直达列车（经大分、丰肥本线） → 阿苏站 → 步行至万枫。无合适直达车时，改查大分经丰肥本线换乘，不能假定原稿早车每天都有。</td><td>铁路先按 <b>约 2.5–3 小时</b>计划（估算，换乘方案可能更久）；<b>10/30 具体车次 / 运行日 / 指定席尚未核实或预约</b>。两端站前步行各建议留 10–15 分钟缓冲。</td><td>若同日上阿苏山，需按确定列车衔接山上巴士。优先问万枫能否先寄存行李；<b>不再去内牧，晚餐自行安排</b>。</td></tr>
+      <tr><td><b>10/31 · 阿苏万枫 → THE BLOSSOM</b></td><td>万枫取行李、步行至<b>阿苏站</b> → 阿苏 BOY! 2 号 → 熊本站 → 按 AMU PLAZA / 酒店指示步行到 THE BLOSSOM。无需内牧接驳，也不从宫地上车。</td><td><b>已预约：阿苏 12:12 → 熊本 13:20</b>，车上 1 小时 08 分。建议 11:52 前到站台；万枫 11:00 前退房，THE BLOSSOM 15:00 后正式入住。</td><td>纸质指定席券待领取；携带全部行李，抵熊本先问酒店寄存。酒店位于熊本站 / AMU PLAZA 区域，去熊本城、下通另乘市电或其他市内交通。</td></tr>
+    </tbody>
+  </table></div>
+  <details><summary><b>酒店定位与地址（OpenStreetMap，无 Google）</b></summary><ul class="clean">
+    <li><a href="https://www.openstreetmap.org/?mlat=33.595374&amp;mlon=130.408272#map=17/33.595374/130.408272">Vista：14-28 Kamikawabatamachi, Fukuoka</a></li>
+    <li><a href="https://www.openstreetmap.org/?mlat=33.273265&amp;mlon=131.366474#map=16/33.273265/131.366474">清孔苑：1208-1 Yufuincho Kawakami, Yufu</a></li>
+    <li><a href="https://www.openstreetmap.org/?mlat=33.279502&amp;mlon=131.501567#map=17/33.279502/131.501567">御宿野乃：2-6 Ekimae Honmachi, Beppu</a></li>
+    <li><a href="https://www.openstreetmap.org/?mlat=32.936993&amp;mlon=131.079233#map=17/32.936993/131.079233">阿苏万枫：1407-1 Kurokawa, Aso</a></li>
+    <li><a href="https://www.openstreetmap.org/?mlat=32.789180&amp;mlon=130.688685#map=17/32.789180/130.688685">THE BLOSSOM：15-26 Kasuga 3-chome, Kumamoto</a></li>
+  </ul></details>
+  <div class="src">酒店位置核对：Trip.com 酒店公开详情坐标（10/04）与本地订单地址。铁路的 10/28、10/31 时刻沿用已预约回执；其他时刻及总用时为待核实 / 计划估算，不是本次查到的官方班表。接驳不等于已预约。地图底图 © OpenStreetMap contributors；离线示意仅保留酒店坐标及出行顺序。</div>
+
+  <h3>备选酒店房型与比价（不是已订订单价格）</h3>
+
+  <div class="note info">
+    <b>备选双床核价口径：</b>仅接受页面明确写明 2 single beds 的房型；Twin 名称本身不足以证明床型。币种 CNY，记录房型对应的含税费总价、早餐、吸烟政策及取消条款；未知项明确标为未说明。下方是此前查询的备选套餐，不是已订订单价格、房型或取消条款；实际订单以上方凭证清单为准。
+  </div>
+
+  <div class="note amber"><b>核价结果 · 2026/10/04：</b>36 个候选中，18 家查到明确两张单人床的可报价房型。下面的删除线金额是首轮未限定床型的报价，不能与双床现价混用。红色金额仅对应本行房型及套餐；早餐和 non-smoking 均不是必选条件。取消截止时间照录平台页面，未核实其时区。部分酒店仍提示可能另收费用。</div>
+
+  <h4><span class="city">D1 · 10/27–10/28</span>福冈 · 1 晚</h4>
+  <div class="tw"><table style="min-width:1200px">
+    <thead><tr><th>酒店</th><th>房型 / 床型核实</th><th>首轮旧价 → 双床含税费总价 CNY</th><th>早餐</th><th>吸烟政策</th><th>取消 / 优惠 / 查询结论</th></tr></thead>
+    <tbody>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=248&amp;hotelId=39481533&amp;checkIn=2026-10-27&amp;checkOut=2026-10-28&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Hotel Vista Fukuoka Nakasu-Kawabata</a></td><td>Comfort Twin Room · 26㎡<br><b>两张单人床（2 single beds）</b></td><td><del>826（Comfort Double）</del><br><span class="price-current">1,596</span> 不含早<br><span class="price-current">1,811</span> 含两份早</td><td>两种套餐分列；不含早套餐可加购</td><td>禁烟 / Non-smoking</td><td>两种均可免费取消至 10/23 23:59；Special Discount</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=248&amp;hotelId=91574534&amp;checkIn=2026-10-27&amp;checkOut=2026-10-28&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">You Style Hotel Hakata</a></td><td>Standard Twin Room, Non-Smoking · 19㎡<br><b>两张单人床（2 single beds）</b></td><td><del>694（Standard Double）</del><br><span class="price-current">1,297</span> 不可退<br><span class="price-current">1,417</span> 可退</td><td>页面未说明；不能认定含早</td><td>禁烟 / Non-smoking</td><td>1,297 套餐不可退、Special Discount；1,417 套餐可免费取消至 10/25 23:59</td></tr>
+      <tr><td class="dest">ALPHABED INN Hakata station front</td><td>未取得可订房型条目</td><td>旧价未核实<br>无法核价</td><td>未说明</td><td>未说明</td><td>日文 ALPHABED INN 博多駅前仅匹配为地标（searchType=LM），结果为周边酒店；不替代报价，也不认定无房</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=248&amp;hotelId=1498419&amp;checkIn=2026-10-27&amp;checkOut=2026-10-28&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Hotel Forza Hakataeki Chikushi-Guchi Ⅰ</a></td><td>当晚展示 Superior Twin For 3 People：<b>3 single beds</b>；其余为大床</td><td><del>809（Superior Double）</del><br>未展示合格双床标间</td><td>三床房有含早 / 可加购套餐；不作为本次双床报价</td><td>展示房型禁烟</td><td>不把三床房或大床房当作两张单人床标间；不代表酒店永久无双床房</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=248&amp;hotelId=17448077&amp;checkIn=2026-10-27&amp;checkOut=2026-10-28&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Fukuoka Arty Inn</a></td><td>Twin With Bath · 24㎡<br><b>两张单人床（2 single beds）</b></td><td><del>414（Semi Double）</del><br><span class="price-current">673</span> 禁烟<br><span class="price-current">673</span> 吸烟</td><td>页面未说明；不能认定含早</td><td>禁烟与 Smoking Permitted 各有套餐</td><td>均可免费取消至 10/25 12:00；Special Discount；需在次日 01:00 前入住。已排除页面建议订 2 间的单人入住套餐</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=248&amp;hotelId=705197&amp;checkIn=2026-10-27&amp;checkOut=2026-10-28&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Miyako Hotel Hakata</a></td><td>当晚仅展示 Deluxe King Double：1 king bed</td><td><del>2,101（Deluxe King Double）</del><br>未展示合格双床</td><td>合格双床套餐未核实</td><td>展示大床房禁烟</td><td>不沿用大床报价</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D2 · 10/28–10/29</span>由布院 · 1 晚</h4>
+  <div class="tw"><table style="min-width:1200px">
+    <thead><tr><th>酒店</th><th>房型 / 床型核实</th><th>首轮旧价 → 双床含税费总价 CNY</th><th>早餐</th><th>吸烟政策</th><th>取消 / 优惠 / 查询结论</th></tr></thead>
+    <tbody>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=21829547&amp;checkIn=2026-10-28&amp;checkOut=2026-10-29&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">OYADO URAKU</a></td><td>和室 8 帖 / Japanese Room：3 futon beds</td><td><del>974（日式房）</del><br>未展示合格双床</td><td>合格双床套餐未核实</td><td>部分和室允许吸烟；合格双床未核实</td><td>日式床铺不等于两张单人床</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=2506522&amp;checkIn=2026-10-28&amp;checkOut=2026-10-29&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Yufuin Besso Shikisai Hotel</a></td><td>Superior Twin 实际为 <b>1 single bed and 1 queen bed</b>；家庭房为 2 大床＋1 单人床</td><td><del>960（Superior Twin）</del><br>床型不符合</td><td>展示 Superior Twin 套餐含两份早餐</td><td>展示房型禁烟</td><td>虽名为 Twin，但不是两张单人床；不纳入推荐</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=1678725&amp;checkIn=2026-10-28&amp;checkOut=2026-10-29&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Yufuin Sansuikan（由布院山水馆）</a></td><td>当晚展示和室 12.5 帖：5 futon beds</td><td><del>1,529（日式房）</del><br>未展示合格双床</td><td>合格双床套餐未核实</td><td>展示和室禁烟</td><td>不将和室套餐作为双床标准间</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=703537&amp;checkIn=2026-10-28&amp;checkOut=2026-10-29&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Yufuin Hotel Shuhokan</a></td><td>Twin Room - Non-Smoking - Max 2 People · 23㎡<br><b>两张单人床（2 single beds）</b></td><td><del>1,085（首轮房型未核实）</del><br><span class="price-current">1,318</span> 不可退<br><span class="price-current">1,395</span> 可退</td><td>均不含早餐，可加购；页面另列两人拉面晚餐套餐</td><td>禁烟 / Non-smoking</td><td>1,318：不可退、Early bird / Special Discount；1,395：免费取消至 10/20 23:59、Early bird / First Booking Deal（首订优惠，资格需复核）</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=7603633&amp;checkIn=2026-10-28&amp;checkOut=2026-10-29&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Yufuin Ryokan Seikoen</a></td><td>Annex Room：2 single beds and 4 futon beds；有两张单人床，但为混合房，非普通标间</td><td><del>3,316（首轮套餐）</del><br>非标间，不纳入本次组合</td><td>展示套餐为两人半食宿（餐食视供应情况）</td><td>混合房禁烟</td><td>如考虑混合房需另行确认；不以混合房冒充双床标准间</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=62275&amp;hotelId=21829614&amp;checkIn=2026-10-28&amp;checkOut=2026-10-29&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Besso Konjakuan</a></td><td>Main Building Twin With Bath · 15㎡<br><b>两张单人床（2 single beds）</b></td><td><del>3,364（首轮套餐）</del><br><span class="price-current">3,364</span></td><td>含两人早餐与晚餐</td><td>禁烟 / Non-smoking</td><td>免费取消至 10/20 12:00；18:00 前入住；Special Discount。价格未变，但本轮已核实床型</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D3 · 10/29–10/30</span>别府 · 1 晚</h4>
+  <div class="tw"><table style="min-width:1200px">
+    <thead><tr><th>酒店</th><th>房型 / 床型核实</th><th>首轮旧价 → 双床含税费总价 CNY</th><th>早餐</th><th>吸烟政策</th><th>取消 / 优惠 / 查询结论</th></tr></thead>
+    <tbody>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=703864&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Beppu Daiiti Hotel</a></td><td>Standard Twin Room · 17㎡<br><b>两张单人床（2 single beds）</b></td><td><del>321（首轮未限定床型）</del><br><span class="price-current">647</span></td><td>不含早餐，可加购</td><td>禁烟 / Non-smoking</td><td>免费取消至 10/28 23:59；Early bird / Special Discount；返 Trip Coins 不从现金总价扣除</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=61630645&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Super Hotel Beppu Ekimae</a></td><td>展示随机房型、大床房、大床＋沙发床；无明确两张单人床</td><td><del>539（首轮未限定床型）</del><br>未展示合格双床</td><td>首轮含早；合格双床套餐未核实</td><td>展示房型禁烟</td><td>Run Of House 不保证床型，不接受随机分配</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=1182137&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">西铁别府度假酒店 / Nishitetsu Resort Inn Beppu</a></td><td>Standard Twin Room Non Smoking · 17㎡<br><b>两张单人床（2 single beds）</b></td><td><del>746（首轮未限定床型）</del><br><span class="price-current">883</span> 不含早<br><span class="price-current">987</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均免费取消至 10/27 23:59；Special Discount。另有 Economy Twin 15㎡，同为两张单人床，不含早 745 / 含早 849，未作为标准房主报价</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=133197632&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Apartment Hotel YAEZAKI</a></td><td>Deluxe Sea View Room · 28㎡<br><b>两张单人床（2 single beds）</b></td><td><del>611（首轮套餐）</del><br><span class="price-current">611</span> 24 小时窗口<br><span class="price-current">937</span> 可退</td><td>均含两份早餐</td><td>禁烟 / Non-smoking</td><td>611：24-hour Cancellation Window，不等于持续免费取消，Special Discount；937：免费取消至 10/26 23:59。非基础标准房，为明确双床的海景升级房</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=112864248&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Beppu Hatto Onyado Nono Beppu</a></td><td>Twin Room-Non Smoking · 20㎡<br><b>两张单人床（2 single beds）</b></td><td><del>1,236（首轮未限定床型）</del><br><span class="price-current">1,671</span> 不含早<br><span class="price-current">1,984</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均免费取消至 10/28 18:00</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=76542612&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">AMANEK BEPPU YULA-RE</a></td><td>Superior Twin -Non smoking · 25㎡<br><b>两张单人床（2 single beds）</b></td><td><del>819（首轮套餐）</del><br><span class="price-current">818</span> 不含早<br><span class="price-current">924</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均不可退、First Booking Deal（首订资格需复核）；含早套餐标明每 2 天清洁。为高级双床房</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4828&amp;hotelId=703533&amp;checkIn=2026-10-29&amp;checkOut=2026-10-30&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Beppu SUGINOI HOTEL</a></td><td>Hoshi Kan Standard Mountain View · 35㎡<br><b>两张单人床（2 single beds）</b></td><td><del>2,032（Niji Kan Casual Twin）</del><br><span class="price-current">2,123</span></td><td>含两人自助早餐与晚餐（Wa Dining Hoshi）</td><td>禁烟 / Non-smoking</td><td>免费取消至 10/19 17:00；Special Discount。原 Niji Kan Casual Twin 实为 1 double＋1 queen，不符合条件，已排除</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D4 · 10/30–10/31</span>阿苏 / 内牧 · 1 晚</h4>
+  <div class="tw"><table style="min-width:1200px">
+    <thead><tr><th>酒店</th><th>房型 / 床型核实</th><th>首轮旧价 → 双床含税费总价 CNY</th><th>早餐</th><th>吸烟政策</th><th>取消 / 优惠 / 查询结论</th></tr></thead>
+    <tbody>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=50119&amp;hotelId=112335329&amp;checkIn=2026-10-30&amp;checkOut=2026-10-31&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Fairfield by Marriott Kumamoto Aso</a></td><td>Standard Twin Room With 2 Single Beds · 25㎡<br><b>两张单人床（2 single beds）</b></td><td><del>1,249（首轮未限定床型）</del><br><span class="price-current">1,357</span></td><td>页面未说明；不能认定含早</td><td>禁烟 / Non-smoking</td><td>免费取消至 10/29 23:59；到店付或预付均为此价；位于阿苏站附近，非内牧温泉</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=50119&amp;hotelId=1458363&amp;checkIn=2026-10-30&amp;checkOut=2026-10-31&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">蘇山鄉 / Sozankyo</a></td><td>平台当前不接受预订</td><td>无法取得双床报价</td><td>未说明</td><td>未说明</td><td>详情页：This hotel is not currently accepting bookings；修正首轮“当晚无房”的笼统描述，不代表其他渠道售罄</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=50119&amp;hotelId=10507288&amp;checkIn=2026-10-30&amp;checkOut=2026-10-31&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">阿苏市民宿 / Minshuku Asogen</a></td><td>所选日期无可订房型</td><td>Trip.com 当晚无房</td><td>未说明</td><td>未说明</td><td>详情页：No availability on or around your selected dates；未用其他日期报价代替</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=50119&amp;hotelId=9024768&amp;checkIn=2026-10-30&amp;checkOut=2026-10-31&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">阿蘇び心 / Asobi Gokoro</a></td><td>平台当前不接受预订</td><td>无法取得双床报价</td><td>未说明</td><td>未说明</td><td>详情页：This hotel is not currently accepting bookings；不是已证明酒店售罄</td></tr>
+      <tr><td class="dest">Aso Grand View</td><td>未精确匹配酒店条目</td><td>无法核价</td><td>未说明</td><td>未说明</td><td>本轮自动补全仅返回泛阿苏景观及其他地区条目；不替换为相近名称酒店，不认定无房</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=50119&amp;hotelId=705378&amp;checkIn=2026-10-30&amp;checkOut=2026-10-31&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">阿苏度假村 Grandvrio / Aso Resort Grandvrio Hotel</a></td><td>Twin Room A with Mountain View · 24㎡<br><b>两张单人床（2 single beds）</b>＋1 沙发床；两人使用单人床</td><td><del>1,028（床数未说明的 Twin）</del><br><span class="price-current">1,092</span></td><td>含两份早餐</td><td>禁烟 / Non-smoking</td><td>免费取消至 10/26 23:59；Special Discount。1,028 的基础 Twin 未说明床数，未作为合格报价</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=50119&amp;hotelId=5523737&amp;checkIn=2026-10-30&amp;checkOut=2026-10-31&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">KAMENOI HOTEL ASO</a></td><td>当晚展示日式床铺、Queen、2 small double beds 或床型未明的 3 beds 房</td><td><del>1,622（日式房）</del><br>未展示合格双床标间</td><td>合格双床套餐未核实</td><td>展示房型禁烟</td><td>不接受日式床铺、半双人床或床型未说明；不是 Aso Park Resort</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D5 · 10/31–11/01</span>熊本 · 1 晚</h4>
+  <div class="tw"><table style="min-width:1200px">
+    <thead><tr><th>酒店</th><th>房型 / 床型核实</th><th>首轮旧价 → 双床含税费总价 CNY</th><th>早餐</th><th>吸烟政策</th><th>取消 / 优惠 / 查询结论</th></tr></thead>
+    <tbody>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=97980744&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Sotetsu Grand Fresa Kumamoto</a></td><td>Comfort Double 为大床；Interconnecting Twin 为 4 single beds 连通房</td><td><del>863（首轮未限定床型）</del><br>未展示合格双床标间</td><td>四床房有含早 / 可加购套餐；合格双床未核实</td><td>展示房型禁烟</td><td>不以四床连通房冒充 1 间双床标间</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=133275969&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Via Inn Prime Kumamoto</a></td><td>Superior Twin Room Non-Smoking · 20㎡<br><b>两张单人床（2 single beds）</b></td><td><del>842（Via Inn Single）</del><br><span class="price-current">1,201</span> 不含早<br><span class="price-current">1,389</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均免费取消至 10/27 23:59；为高级双床房，不沿用 Single 房型价格</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=114782339&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Grids Premium Hotel Kumamoto</a></td><td>Compact Twin (Non Smoking) · 17㎡<br><b>两张单人床（2 single beds）</b></td><td><del>992（首轮未限定床型）</del><br><span class="price-current">1,131</span></td><td>不含早餐，可加购</td><td>禁烟 / Non-smoking</td><td>免费取消至 10/24 17:00；Corner Twin 为随机床型，已排除</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=97347447&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Candeo Hotels Kumamoto Shinshigai</a></td><td>当晚仅展示 King Room：1 king bed</td><td><del>1,231（首轮未限定床型）</del><br>未展示合格双床</td><td>合格双床套餐未核实</td><td>展示大床房禁烟</td><td>不沿用大床报价</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=46919591&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">REF Kumamoto by VESSEL HOTELS</a></td><td>Standard / Moderate Twin 为 <b>2 small double beds</b>；加床房为 3 single beds</td><td><del>1,040（首轮未限定床型）</del><br>床型不符合</td><td>展示 Twin 有含早 / 可加购套餐；不作为合格双床报价</td><td>展示房型禁烟</td><td>严格按两张单人床筛选，不将半双人床或三床房当作标间</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=94327236&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">KOKO HOTEL Premier Kumamoto</a></td><td>Superior / Deluxe Twin 实为 <b>2 small double beds</b></td><td><del>972（首轮未限定床型）</del><br>床型不符合</td><td>展示 Twin 有含早 / 可加购套餐；不作为合格双床报价</td><td>展示房型禁烟</td><td>不是明确的两张 single beds，不纳入本次双床组合</td></tr>
+      <tr><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=134006675&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">HOTEL AMANEK Kumamoto</a></td><td>展示 Standard Queen 与 Superior Triple（3 single beds）</td><td><del>956（首轮未限定床型）</del><br>未展示合格双床标间</td><td>合格双床套餐未核实</td><td>展示房型禁烟</td><td>大床与三床均不作为本次两张单人床标间报价</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=70181290&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">THE BLOSSOM KUMAMOTO</a></td><td>Deluxe Twin Room【No Smoking】· 30–33㎡<br><b>两张单人床（2 single beds）</b></td><td><del>1,151（Moderate Double）</del><br><span class="price-current">1,899</span> 不含早<br><span class="price-current">2,078</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均免费取消至 10/27 23:59；为豪华双床升级房；同价榻榻米空间房也有两张单人床，但本行选普通 Deluxe Twin</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=705396&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Kumamoto Washington Hotel Plaza</a></td><td>Twin Room 1 Non Smoking · 17–21㎡<br><b>两张单人床（2 single beds）</b></td><td><del>791（首轮未限定床型）</del><br><span class="price-current">1,223</span> 不含早<br><span class="price-current">1,384</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均免费取消至 10/29 23:59</td></tr>
+      <tr data-bed="2-single"><td class="dest"><a href="https://www.trip.com/hotels/detail/?cityId=4009&amp;hotelId=704121&amp;checkIn=2026-10-31&amp;checkOut=2026-11-01&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY&amp;locale=en-XX">Mitsui Garden Hotel Kumamoto</a></td><td>Standard Twin Room-Non smoking · 21㎡<br><b>两张单人床（2 single beds）</b></td><td><del>810（首轮未限定床型）</del><br><span class="price-current">1,158</span> 不含早<br><span class="price-current">1,348</span> 含两份早</td><td>两种套餐分列；可加购</td><td>禁烟 / Non-smoking</td><td>均免费取消至 10/29 23:59；Silver Tier Deal（会员等级优惠，资格需复核）</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note tip"><b>未下单的备选五晚组合（不是实际订单合计）：</b>D1 Arty Inn 禁烟 673 ＋ D2 Shuhokan 1,395 ＋ D3 Daiiti 647 ＋ D4 Fairfield 1,357 ＋ D5 GRIDS 1,131 ＝ <b>CNY 5,203 / 1 间房 / 2 人 / 5 晚</b>。每项均有两张单人床证据及免费取消截止时间；D2 含首订优惠，实际资格需复核。D2、D3、D5 不含早餐，D1、D4 早餐未说明；不是全含早组合。所有取消截止早于入住，请按本行条款确认。此组合仅作备选房型与费用参考，实际已下单酒店与费用以上方订单清单为准。</div>
+  <div class="src">来源：Trip.com 酒店房型详情页及自动补全；双床重新核价日 2026/10/04。上表酒店名称链接保留各晚真实入住 / 退房日期、1 间房、2 成人、0 儿童及 CNY 参数。红色报价取对应两人套餐的 Total (incl. taxes &amp; fees)，不使用酒店起价、不扣返还积分、不采用建议订两间的单人价。未展示合格房型仅是本次平台所见，不等于酒店没有该房型。</div>
+
+  <details class="archive">
+    <summary>展开 10/04 首轮未筛选床型的报价（不适用于同事双床需求）</summary>
+    <div class="note amber">以下删除线金额是首轮历史记录，并非已核实的双床现价；包含大床与日式房，不可据此下单或计算双床预算。合格双床报价仅以上方新表为准。</div>
+  <h4><span class="city">D1 · 10/27</span>福冈 · 博多 / 天神</h4>
+  <div class="tw"><table style="min-width:920px">
+    <thead><tr><th>酒店</th><th>旧报价快照</th><th>Trip.com 当前总价 · CNY含税费 · 10/04</th><th>房型与条件</th></tr></thead>
+    <tbody>
+      <tr><td class="dest">Hotel Vista Fukuoka Nakasu-Kawabata</td><td><del>Booking ¥1,382；Trip.com ≈¥880；携程参考 ≈¥850–950</del></td><td><span class="price-current">CNY 826</span></td><td>Comfort Double Room；可免费取消至 10/23 23:59</td></tr>
+      <tr><td class="dest">You Style Hotel Hakata</td><td><del>≈¥830（US$115 折算）</del></td><td><span class="price-current">CNY 694</span></td><td>Standard Double Room, Non-Smoking；免费取消</td></tr>
+      <tr><td class="dest">ALPHABED INN Hakata station front</td><td><del>Booking ¥929</del></td><td><span class="b no">未精确匹配</span></td><td>Trip.com 自动补全未匹配该酒店；不以其他酒店价格代替</td></tr>
+      <tr><td class="dest">Hotel Forza Hakataeki Chikushi-Guchi Ⅰ</td><td><del>Trip.com ≈¥800；US$112 折算</del></td><td><span class="price-current">CNY 809</span></td><td>Superior Double Room；页面显示仅余 3 间，未显示免费取消</td></tr>
+      <tr><td class="dest">Fukuoka Arty Inn</td><td><del>≈¥450（US$62 折算）</del></td><td><span class="price-current">CNY 414</span></td><td>Semi Double With Bath (Smoking)；免费取消</td></tr>
+      <tr><td class="dest">Miyako Hotel Hakata</td><td><del>Booking ¥2,269</del></td><td><span class="price-current">CNY 2,101</span></td><td>Deluxe King Double Room；免费取消，页面显示仅余 1 间</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D2 · 10/28</span>由布院温泉</h4>
+  <div class="tw"><table style="min-width:920px">
+    <thead><tr><th>酒店</th><th>旧报价快照</th><th>Trip.com 当前总价 · CNY含税费 · 10/04</th><th>房型与条件</th></tr></thead>
+    <tbody>
+      <tr><td class="dest">OYADO URAKU</td><td><del>≈¥1,045（US$145 折算）；携程参考 ¥1,000–1,300</del></td><td><span class="price-current">CNY 974</span></td><td>Japanese-Style Room (8 Tatami)；免费取消</td></tr>
+      <tr><td class="dest">Yufuin Besso Shikisai Hotel</td><td><del>≈¥1,050（US$146 折算）</del></td><td><span class="price-current">CNY 960</span></td><td>Superior Twin Room；含早餐、免费取消；页面显示仅余 2 间</td></tr>
+      <tr><td class="dest">Yufuin Sansuikan（由布院山水馆）</td><td><del>≈¥1,730（US$240 折算）</del></td><td><span class="price-current">CNY 1,529</span></td><td>Standard Japanese-Style Room (12.5 Tatami)；免费取消</td></tr>
+      <tr><td class="dest">Yufuin Hotel Shuhokan</td><td><del>≈¥1,025（US$142 折算）</del></td><td><span class="price-current">CNY 1,085</span></td><td>页面显示仅余 1 间；未显示免费取消条件</td></tr>
+      <tr><td class="dest">Yufuin Ryokan Seikoen</td><td><del>≈¥2,310</del></td><td><span class="price-current">CNY 3,316</span></td><td>含半食宿；免费取消</td></tr>
+      <tr><td class="dest">Besso Konjakuan</td><td><del>≈¥3,550</del></td><td><span class="price-current">CNY 3,364</span></td><td>含早餐与晚餐；免费取消，页面显示仅余 4 间</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D3 · 10/29</span>别府站前</h4>
+  <div class="tw"><table style="min-width:920px">
+    <thead><tr><th>酒店</th><th>旧报价快照</th><th>Trip.com 当前总价 · CNY含税费 · 10/04</th><th>房型与条件</th></tr></thead>
+    <tbody>
+      <tr><td class="dest">Beppu Daiiti Hotel</td><td><del>≈¥340（US$47 折算）；携程参考 ≈¥410+</del></td><td><span class="price-current">CNY 321</span></td><td>页面显示可免费取消</td></tr>
+      <tr><td class="dest">Super Hotel Beppu Ekimae</td><td><del>Booking ¥458；携程参考 ¥471</del></td><td><span class="price-current">CNY 539</span></td><td>含早餐；免费取消</td></tr>
+      <tr><td class="dest">西铁别府度假酒店（Nishitetsu Resort Inn Beppu）</td><td><del>Booking ¥489；Trip.com ≈¥1,138</del></td><td><span class="price-current">CNY 746</span></td><td>免费取消；页面显示仅余 3 间</td></tr>
+      <tr><td class="dest">Apartment Hotel YAEZAKI</td><td><del>Booking ¥536</del></td><td><span class="price-current">CNY 611</span></td><td>Deluxe Sea View Room；含早餐，24 小时取消窗口；仅余 1 间</td></tr>
+      <tr><td class="dest">Beppu Hatto Onyado Nono Beppu</td><td><del>Booking ¥851；携程参考 ¥1,503</del></td><td><span class="price-current">CNY 1,236</span></td><td>免费取消</td></tr>
+      <tr><td class="dest">AMANEK BEPPU YULA-RE</td><td><del>≈¥960（US$133 折算）</del></td><td><span class="price-current">CNY 819</span></td><td>页面显示仅余 3 间；当前房型未显示免费取消条件</td></tr>
+      <tr><td class="dest">Beppu SUGINOI HOTEL</td><td><del>Booking ¥1,684；Trip.com ≈¥2,640；携程参考 ≈¥3,284</del></td><td><span class="price-current">CNY 2,032</span></td><td>Niji Kan Casual Twin Room；含早餐与晚餐，免费取消</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D4 · 10/30</span>阿苏 / 内牧</h4>
+  <div class="tw"><table style="min-width:920px">
+    <thead><tr><th>酒店</th><th>旧报价快照</th><th>Trip.com 当前总价 · CNY含税费 · 10/04</th><th>房型与条件</th></tr></thead>
+    <tbody>
+      <tr><td class="dest">Fairfield by Marriott Kumamoto Aso</td><td><del>Booking ¥612；Trip.com ≈¥1,110；携程参考 ¥700–900</del></td><td><span class="price-current">CNY 1,249</span></td><td>免费取消；阿苏站附近</td></tr>
+      <tr><td class="dest">蘇山鄉（Sozankyo）</td><td><del>Booking ¥1,684；Trip.com ≈¥3,200</del></td><td><span class="b book">10/30 当晚无房</span></td><td>Trip.com 明确显示所选日期无房</td></tr>
+      <tr><td class="dest">阿苏市民宿（Asogen / Minshuku Asogen）</td><td><del>Booking ¥561</del></td><td><span class="b book">10/30 当晚无房</span></td><td>Trip.com 明确显示所选日期无房</td></tr>
+      <tr><td class="dest">阿蘇び心（Asobi Gokoro）</td><td><del>Booking ¥628</del></td><td><span class="b book">10/30 当晚无房</span></td><td>Trip.com 明确显示所选日期无房</td></tr>
+      <tr><td class="dest">Aso Grand View</td><td><del>Booking ¥1,627</del></td><td><span class="b no">未精确匹配</span></td><td>Trip.com 未匹配到该酒店条目；不以其他阿苏酒店代价</td></tr>
+      <tr><td class="dest">阿苏度假村 Grandvrio（Aso Resort Grandvrio Hotel）</td><td><del>Booking ¥859；Trip.com ≈¥1,090</del></td><td><span class="price-current">CNY 1,028</span></td><td>免费取消</td></tr>
+      <tr><td class="dest">KAMENOI HOTEL ASO</td><td><del>Trip.com ≈¥1,840</del></td><td><span class="price-current">CNY 1,622</span></td><td>含早餐与晚餐；免费取消</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4><span class="city">D5 · 10/31</span>熊本站前 / 下通</h4>
+  <div class="tw"><table style="min-width:920px">
+    <thead><tr><th>酒店</th><th>旧报价快照</th><th>Trip.com 当前总价 · CNY含税费 · 10/04</th><th>房型与条件</th></tr></thead>
+    <tbody>
+      <tr><td class="dest">Sotetsu Grand Fresa Kumamoto</td><td><del>Booking ¥445</del></td><td><span class="price-current">CNY 863</span></td><td>免费取消</td></tr>
+      <tr><td class="dest">Via Inn Prime Kumamoto</td><td><del>Booking ¥372</del></td><td><span class="price-current">CNY 842</span></td><td>Via Inn Single Room, Non-Smoking；免费取消</td></tr>
+      <tr><td class="dest">Grids Premium Hotel Kumamoto</td><td><del>Booking ¥434</del></td><td><span class="price-current">CNY 992</span></td><td>免费取消；页面显示仅余 2 间</td></tr>
+      <tr><td class="dest">Candeo Hotels Kumamoto Shinshigai</td><td><del>Booking ¥486；Trip.com ≈¥1,500</del></td><td><span class="price-current">CNY 1,231</span></td><td>页面显示仅余 2 间；当前房型未显示免费取消条件</td></tr>
+      <tr><td class="dest">REF Kumamoto by VESSEL HOTELS</td><td><del>Booking ¥578</del></td><td><span class="price-current">CNY 1,040</span></td><td>免费取消</td></tr>
+      <tr><td class="dest">KOKO HOTEL Premier Kumamoto</td><td><del>Booking ¥595；Trip.com ≈¥960</del></td><td><span class="price-current">CNY 972</span></td><td>免费取消；页面显示仅余 5 间</td></tr>
+      <tr><td class="dest">HOTEL AMANEK Kumamoto</td><td><del>Booking ¥679；Trip.com ≈¥1,100</del></td><td><span class="price-current">CNY 956</span></td><td>含新用户优惠；当前房型未显示免费取消条件</td></tr>
+      <tr><td class="dest">THE BLOSSOM KUMAMOTO</td><td><del>Booking ¥792；Trip.com ≈¥1,370</del></td><td><span class="price-current">CNY 1,151</span></td><td>Moderate Double Room, Non-Smoking；免费取消</td></tr>
+      <tr><td class="dest">Kumamoto Washington Hotel Plaza</td><td><del>Trip.com ≈¥760</del></td><td><span class="price-current">CNY 791</span></td><td>免费取消；页面显示仅余 1 间</td></tr>
+      <tr><td class="dest">Mitsui Garden Hotel Kumamoto</td><td><del>Trip.com ≈¥830</del></td><td><span class="price-current">CNY 810</span></td><td>免费取消；页面显示仅余 1 间</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note tip">
+    <b>已失效的首轮组合：</b>D1 Hotel Vista ¥826 · D2 OYADO URAKU ¥974 · D3 Beppu Daiiti ¥321 · D4 Fairfield ¥1,249 · D5 KOKO Premier ¥972。
+    <br>历史合计 <del>约 ¥3,840</del> → 首轮合计 <del>CNY 4,342</del>。未核实两张单人床，不能作为本次住宿预算。
+  </div>
+
+  <div class="src">来源：Trip.com 酒店实时结果页；查询日 2026/10/04；每晚 1 间 / 2 位成人。现价取页面显示的含税费总价；平台同时提示个别住宿可能另收费用。报价随库存变化，不等于已预订。</div>
+  </details>
+
+  <details class="archive">
+    <summary>展开 2026/10/03 历史酒店建议与多平台快照（仅作历史参考，不是当前报价）</summary>
+    <div class="note amber">以下折叠内容保留原始酒店说明与旧平台快照。当前价格请以上方红色报价为准；不要将本区历史价当作现价。</div>
+
+  <!-- 博多 -->
+  <h4><span class="city">D1 · 10/27</span>博多站周边 <span class="when">商务连锁 · 1 晚</span></h4>
+  <div class="pick">
+    <div class="name">首选：<span class="dest">Hotel Vista Fukuoka Nakasu-Kawabata</span> <span class="b ok">评分 9.1</span> <span class="b free">可免费取消</span></div>
+    <div class="why">机场地铁两站直达圈内，<b>中洲川端站步行约 3 分钟</b>，楼下便利店与药妆齐全，深夜抵达也亮灯安全。9.1 分／579 条评价，是这一档里口碑最稳的选择。</div>
+    <div class="plat">
+      <div class="p best"><div class="pn">BOOKING 实查</div><div class="pv">¥1,382</div><div class="pd">1 间 · 2 人 · 含税<br>D1 这一档的另一家 9.1 分同价位带</div></div>
+      <div class="p best"><div class="pn">TRIP.COM 同库存</div><div class="pv">≈¥880</div><div class="pd">Hotel Vista 同档 US$123<br>可免费取消</div></div>
+      <div class="p"><div class="pn">携程 参考</div><div class="pv">≈¥850–950</div><div class="pd">参考价，非实时</div></div>
+      <div class="p"><div class="pn">飞猪 / 去哪儿</div><div class="pv">—</div><div class="pd">本次抓取被登录墙拦截<br>请于 App 内核对</div></div>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="name">高性价比：You Style Hotel Hakata <span class="b ok">评分 9.6</span> <span class="b free">可免费取消</span></div>
+    <div class="why">本次查到<b>全城最高分 9.6</b>，含税约 US$115（≈¥830）。体量小、房间紧凑，但干净和安静好评；适合只睡一晚的到达日。</div>
+  </div>
+  <div class="alt">
+    <div class="name">最低价：Fukuoka Arty Inn <span class="b free">可免费取消</span></div>
+    <div class="why">含税约 US$62（≈¥450），8.7 分／236 条评价。预算优先时可用，位置在天神南一带。<b>原手册建议的 Forza 博多駅筑紫口</b>本次查到含税 US$112 但<b>该房型未标可免费取消</b>，订前请确认。</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>酒店</th><th style="width:70px">评分</th><th style="width:100px">Booking 实查</th><th style="width:110px">Trip 同库存</th><th style="width:130px">可退</th><th>位置优势</th></tr></thead>
+      <tbody>
+        <tr><td class="dest">You Style Hotel Hakata</td><td class="mono">9.6</td><td class="mono">—</td><td class="mono">≈¥830</td><td><span class="b free">免费取消</span></td><td>博多站圈，安静</td></tr>
+        <tr><td class="dest">Hotel Vista Fukuoka Nakasu-Kawabata</td><td class="mono">9.1</td><td class="mono">¥1,382*</td><td class="mono">≈¥880</td><td><span class="b free">免费取消</span></td><td>中洲川端站 3 分钟</td></tr>
+        <tr><td class="dest">ALPHABED INN Hakata station front</td><td class="mono">9.1</td><td class="mono">¥929</td><td class="mono">—</td><td>订前确认</td><td>博多站正前</td></tr>
+        <tr><td class="dest">Hotel Forza Hakataeki Chikushi-Guchi Ⅰ</td><td class="mono">8.8</td><td class="mono">—</td><td class="mono">≈¥800</td><td>未标可退</td><td>筑紫口，机场线最近</td></tr>
+        <tr><td class="dest">Fukuoka Arty Inn</td><td class="mono">8.7</td><td class="mono">—</td><td class="mono">≈¥450</td><td><span class="b free">免费取消</span></td><td>天神南，预算首选</td></tr>
+        <tr><td class="dest">Miyako Hotel Hakata</td><td class="mono">9.2</td><td class="mono">¥2,269</td><td class="mono">—</td><td>订前确认</td><td>博多站直结，品质型</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src">* Hotel Vista 的 ¥1,382 为 Booking 上<b>可免费取消</b>房型总价；Trip.com 侧同档位为 US$123（≈¥880）含税、可免费取消——<b>同一晚差价可达 400 元以上，订前务必两边比一下。</b></div>
+
+  <!-- 由布院 -->
+  <h4><span class="city">D2 · 10/28</span>由布院温泉 <span class="when">一泊二食 · 1 晚 · 全程最贵一晚</span></h4>
+  <div class="note amber"><b>订房优先级最高的一晚。</b>10 月底是晨雾季＋红叶前夜，周三入住已避开周末溢价，但仍建议尽早锁定。一泊二食含怀石晚餐＋朝汤。</div>
+
+  <div class="pick">
+    <div class="name">首选：<span class="dest">OYADO URAKU</span> <span class="b ok">评分 8.9</span> <span class="b free">可免费取消</span></div>
+    <div class="why">由布院温泉乡内、近由布院站，<b>和室 8 帖房型含税 US$145（≈¥1,045）</b>，是本次查到的由布院带「免费取消」里性价比最好的一档。评价关键词集中在「主人亲切」与「温泉很放松」，61 条评价、体量小、氛围安静。</div>
+    <div class="plat">
+      <div class="p best"><div class="pn">TRIP.COM 同库存</div><div class="pv">≈¥1,045</div><div class="pd">8 帖和室 · 含税<br>可免费取消</div></div>
+      <div class="p"><div class="pn">携程 参考</div><div class="pv">≈¥1,000–1,300</div><div class="pd">参考价，非实时</div></div>
+      <div class="p"><div class="pn">Booking</div><div class="pv">—</div><div class="pd">该店未在 Booking 由布院列表中检出</div></div>
+      <div class="p"><div class="pn">飞猪 / 去哪儿</div><div class="pv">—</div><div class="pd">被登录墙拦截<br>请于 App 内核对</div></div>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="name">备选 A：Yufuin Besso Shikisai Hotel <span class="b ok">评分 8.7</span> <span class="b free">可免费取消</span></div>
+    <div class="why">含税约 US$146（≈¥1,050），431 条评价、体量适中。原手册推荐的「龟之井别庄 / 汤之坪周边中档旅馆」在这一档。<b>价格与首选相近，但可退条款更清晰。</b></div>
+  </div>
+  <div class="alt">
+    <div class="name">备选 B：Yufuin Sansuikan（由布院山水馆）<span class="b ok">评分 8.8</span> <span class="b free">可免费取消</span></div>
+    <div class="why">含税约 US$240（≈¥1,730），450 条评价。规模较大、自助晚餐口碑好（含和牛与蟹），有露天风吕正对由布岳。<b>适合看重「大浴场＋餐食丰盛」的选择</b>。</div>
+  </div>
+  <div class="alt">
+    <div class="name">预算友好：Yufuin Hotel Shuhokan <span class="b ok">评分 8.8</span></div>
+    <div class="why">含税约 US$142（≈¥1,025），340 条评价、双床房非吸烟。<b>本次未标可免费取消</b>，价格优势明显但需接受更严的取消条款。</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>酒店</th><th style="width:70px">评分</th><th style="width:110px">含税总价</th><th style="width:120px">可退</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td class="dest">OYADO URAKU</td><td class="mono">8.9</td><td class="mono">≈¥1,045</td><td><span class="b free">免费取消</span></td><td>8 帖和室，小体量，首选</td></tr>
+        <tr><td class="dest">Yufuin Besso Shikisai Hotel</td><td class="mono">8.7</td><td class="mono">≈¥1,050</td><td><span class="b free">免费取消</span></td><td>体量适中，条款清晰</td></tr>
+        <tr><td class="dest">Yufuin Hotel Shuhokan</td><td class="mono">8.8</td><td class="mono">≈¥1,025</td><td>未标可退</td><td>双床非吸烟，价格友好</td></tr>
+        <tr><td class="dest">Yufuin Sansuikan</td><td class="mono">8.8</td><td class="mono">≈¥1,730</td><td><span class="b free">免费取消</span></td><td>大浴场＋自助晚餐，露天风吕看由布岳</td></tr>
+        <tr><td class="dest">Yufuin Ryokan Seikoen</td><td class="mono">9.3</td><td class="mono">≈¥2,310</td><td><span class="b free">免费取消</span></td><td>高评分传统旅馆，预算宽裕时选</td></tr>
+        <tr><td class="dest">Besso Konjakuan</td><td class="mono">9.4</td><td class="mono">≈¥3,550</td><td><span class="b free">免费取消</span></td><td>顶级档，独立感强</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src">口径：Trip.com 实查 USD 原价 × 当月汇率 ≈ 7.2 折算，均为 1 间/2 人/含税。</div>
+
+  <!-- 别府 -->
+  <h4><span class="city">D3 · 10/29</span>别府站前 <span class="when">自带大浴场 · 1 晚</span></h4>
+  <div class="pick">
+    <div class="name">首选：<span class="dest">Beppu Daiiti Hotel（戴衣提别府酒店）</span> <span class="b ok">评分 9.2–9.3</span> <span class="b free">可免费取消</span></div>
+    <div class="why">本次查到的<b>全场最强性价比</b>：含税仅 <b>US$47（≈¥340）</b>，却有 9.2–9.3 分／442 条评价，距别府站仅约 0.18 km。原手册要的「站前＋自带大浴场＋夜泡别府第八汤」这个需求，它 400 元以内就满足了。</div>
+    <div class="plat">
+      <div class="p best"><div class="pn">TRIP.COM 同库存</div><div class="pv">≈¥340</div><div class="pd">含税 · 可免费取消<br>本次五晚最低价</div></div>
+      <div class="p"><div class="pn">BOOKING 实查</div><div class="pv">¥458–535</div><div class="pd">同档位：Super Hotel 别府站前 ¥458<br>Apartment Hotel YAEZAKI ¥536</div></div>
+      <div class="p"><div class="pn">携程 参考</div><div class="pv">≈¥410–471</div><div class="pd">站前超级酒店 ¥471／格兰德贝塞 ¥410</div></div>
+      <div class="p"><div class="pn">飞猪 / 去哪儿</div><div class="pv">—</div><div class="pd">被登录墙拦截<br>请于 App 内核对</div></div>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="name">品质升级：AMANEK BEPPU YULA-RE <span class="b ok">评分 9.4</span></div>
+    <div class="why">含税约 US$133（≈¥960），1,700 条评价，<b>露天无边际浴池看别府湾</b>是它最出圈的点。距别府站 0.25 km。<b>本次未标可免费取消</b>，价格是首选的近 3 倍，按预算取舍。</div>
+  </div>
+  <div class="alt">
+    <div class="name">温泉旅馆体验：Beppu Hatto Onyado Nono Beppu（别府八汤 御宿野乃）<span class="b ok">评分 9.5</span></div>
+    <div class="why">Booking 实查 <b>¥851/晚含税</b>，1,000+ 条评价。距别府站 0.13 km，含天然温泉大浴场，是「站前位置＋正统日式汤宿」的平衡点。</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>酒店</th><th style="width:70px">评分</th><th style="width:100px">Booking 实查</th><th style="width:100px">Trip 同库存</th><th style="width:100px">携程参考</th><th style="width:110px">可退</th></tr></thead>
+      <tbody>
+        <tr><td class="dest">Beppu Daiiti Hotel</td><td class="mono">9.2</td><td class="mono">—</td><td class="mono">≈¥340</td><td class="mono">≈¥410+</td><td><span class="b free">免费取消</span></td></tr>
+        <tr><td class="dest">Super Hotel Beppu Ekimae</td><td class="mono">8.8</td><td class="mono">¥458</td><td class="mono">—</td><td class="mono">¥471</td><td>订前确认</td></tr>
+        <tr><td class="dest">西铁别府度假酒店</td><td class="mono">8.0</td><td class="mono">¥489</td><td class="mono">≈¥1,138*</td><td class="mono">—</td><td>订前确认</td></tr>
+        <tr><td class="dest">Apartment Hotel YAEZAKI</td><td class="mono">9.3</td><td class="mono">¥536</td><td class="mono">—</td><td class="mono">—</td><td>订前确认</td></tr>
+        <tr><td class="dest">Beppu Hatto Onyado Nono Beppu</td><td class="mono">9.5</td><td class="mono">¥851</td><td class="mono">—</td><td class="mono">¥1,503</td><td>订前确认</td></tr>
+        <tr><td class="dest">AMANEK BEPPU YULA-RE</td><td class="mono">9.4</td><td class="mono">—</td><td class="mono">≈¥960</td><td class="mono">—</td><td>未标可退</td></tr>
+        <tr><td class="dest">Beppu SUGINOI HOTEL</td><td class="mono">9.0</td><td class="mono">¥1,684</td><td class="mono">≈¥2,640</td><td class="mono">≈¥3,284</td><td>订前确认</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src">* 西铁别府度假酒店的 Trip.com 参考价为旺季档，与 Booking 实查价落差大，属不同房型/条款，不可直接横向比较。</div>
+
+  <!-- 阿苏 -->
+  <h4><span class="city">D4 · 10/30</span>阿苏内牧温泉 <span class="when">一泊二食 · 1 晚</span></h4>
+  <div class="pick">
+    <div class="name">首选：<span class="dest">Fairfield by Marriott Kumamoto Aso（熊本阿苏万枫酒店）</span> <span class="b ok">评分 9.6</span> <span class="b free">可免费取消</span></div>
+    <div class="why"><b>2023 年新开、JR 阿苏站步行 2 分钟</b>，是 D4 上山的绝对最优位置——早上不用赶车、行李丢给酒店、下山回来即取。万豪系有 660 条评价、9.6 分。<b>注意它本身无温泉</b>（可去隔壁「阿苏坊中温泉 梦之汤」），本晚若一定要泡汤选下面的温泉旅馆。</div>
+    <div class="plat">
+      <div class="p best"><div class="pn">TRIP.COM 同库存</div><div class="pv">≈¥1,110</div><div class="pd">含税 · 可免费取消<br>站前 2 分钟</div></div>
+      <div class="p best"><div class="pn">BOOKING 实查</div><div class="pv">¥612</div><div class="pd">含税 · 同店本晚实查<br>本次查到的最低档</div></div>
+      <div class="p"><div class="pn">携程 参考</div><div class="pv">≈¥700–900</div><div class="pd">参考价，非实时</div></div>
+      <div class="p"><div class="pn">飞猪 / 去哪儿</div><div class="pv">—</div><div class="pd">被登录墙拦截<br>请于 App 内核对</div></div>
+    </div>
+  </div>
+
+  <div class="note tip"><b>重要：Booking 实查的 ¥612 明显低于 Trip.com 的 ≈¥1,110——同一晚同一店差价近一倍。</b>阿苏区域房量少（Booking 上仅 61 家），建议 <b>两平台同时开页对比后再下单</b>，且优先选可免费取消的那一侧。</div>
+
+  <div class="alt">
+    <div class="name">温泉旅馆首选：蘇山鄉（Sozankyo）<span class="b ok">评分 9.0（Booking）／4.6（Trip）</span></div>
+    <div class="why">内牧温泉超过 60 年历史的老字号，35 间客房走「小而精」路线，<b>怀石晚餐 10–12 道，主打阿苏赤牛</b>。内有源泉挂流大浴场＋贷切风吕。Booking 实查含税 <b>¥1,684/晚</b>，Trip.com 参考含税约 US$445。<b>原手册推荐的「阿苏ニューグランド / 阿苏富士馆城」同一档次，苏山乡条款更透明。</b></div>
+  </div>
+  <div class="alt">
+    <div class="name">性价比温泉：阿苏市民宿（Asogen）<span class="b ok">评分 9.1</span></div>
+    <div class="why">Booking 实查 <b>¥561/晚含税</b>，传统榻榻米＋4 间免费私人汤屋，晚餐是和牛与马肉刺身。<b>本次阿苏查到最便宜的可泡汤选项</b>，预算敏感时的最优解。</div>
+  </div>
+  <div class="alt">
+    <div class="name">景观型：阿蘇び心 Asobi Gokoro <span class="b ok">评分 9.1</span></div>
+    <div class="why">Booking 实查 <b>¥628/晚含税</b>，小而精的内牧温泉民宿，口碑集中在「安静」与「看得出用心」。</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>酒店</th><th style="width:70px">评分</th><th style="width:100px">Booking 实查</th><th style="width:110px">Trip 同库存</th><th style="width:110px">可退</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td class="dest">Fairfield by Marriott Kumamoto Aso</td><td class="mono">9.1–9.6</td><td class="mono">¥612</td><td class="mono">≈¥1,110</td><td><span class="b free">免费取消</span></td><td>站前 2 分钟，无温泉</td></tr>
+        <tr><td class="dest">阿苏市民宿 Asogen</td><td class="mono">9.1</td><td class="mono">¥561</td><td class="mono">—</td><td><span class="b free">免费取消</span></td><td>榻榻米＋4 间免费私汤</td></tr>
+        <tr><td class="dest">阿蘇び心 Asobi Gokoro</td><td class="mono">9.1</td><td class="mono">¥628</td><td class="mono">—</td><td><span class="b free">免费取消</span></td><td>内牧温泉，安静</td></tr>
+        <tr><td class="dest">蘇山鄉 Sozankyo</td><td class="mono">9.0</td><td class="mono">¥1,684</td><td class="mono">≈¥3,200</td><td><span class="b free">免费取消</span></td><td>60 年老铺，赤牛怀石</td></tr>
+        <tr><td class="dest">Aso Grand View</td><td class="mono">9.7</td><td class="mono">¥1,627</td><td class="mono">—</td><td><span class="b free">免费取消</span></td><td>本次阿苏最高分 9.7</td></tr>
+        <tr><td class="dest">阿苏度假村 Grandvrio</td><td class="mono">8.5</td><td class="mono">¥859</td><td class="mono">≈¥1,090</td><td><span class="b free">免费取消</span></td><td>半山景观，落地窗看五岳</td></tr>
+        <tr><td class="dest">KAMENOI HOTEL ASO</td><td class="mono">9.0</td><td class="mono">—</td><td class="mono">≈¥1,840</td><td><span class="b free">免费取消</span></td><td>展望露天温泉，熊本熊主题房</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 熊本 -->
+  <h4><span class="city">D5 · 10/31</span>熊本站前 / 下通 <span class="when">商务连锁 · 1 晚</span></h4>
+  <div class="pick">
+    <div class="name">首选：<span class="dest">Sotetsu Grand Fresa Kumamoto（相铁 Grand Fresa 熊本）</span> <span class="b ok">评分 9.0</span></div>
+    <div class="why">Booking 实查 <b>¥445/晚含税</b>——本次熊本查到的<b>最低价</b>，9.0 分。距熊本站步行圈，市电与巴士枢纽可达，D6 一早退房去水前寺最顺。<b>下通商圈的替代见下方 KOKO Premier。</b></div>
+    <div class="plat">
+      <div class="p best"><div class="pn">BOOKING 实查</div><div class="pv">¥445</div><div class="pd">含税 · 1 间 2 人<br>本次熊本最低</div></div>
+      <div class="p"><div class="pn">TRIP.COM 同库存</div><div class="pv">≈¥800–960</div><div class="pd">Washington ¥760<br>Mitsui Garden ¥830</div></div>
+      <div class="p"><div class="pn">携程 参考</div><div class="pv">≈¥700–1,100</div><div class="pd">参考价，非实时</div></div>
+      <div class="p"><div class="pn">飞猪 / 去哪儿</div><div class="pv">—</div><div class="pd">被登录墙拦截<br>请于 App 内核对</div></div>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="name">下通商圈首选：KOKO HOTEL Premier Kumamoto <span class="b ok">评分 9.3</span> <span class="b free">可免费取消</span></div>
+    <div class="why">Booking 实查 <b>¥595/晚含税</b>，1,053 条评价。正对下通商圈，夜间灯火通明、独行也安心——<b>正好对应原手册「下通商圈＋市电步行可达＋D6 早退房最顺」的三个诉求</b>。</div>
+  </div>
+  <div class="alt">
+    <div class="name">品质之选：THE BLOSSOM KUMAMOTO <span class="b ok">评分 9.3–9.6</span> <span class="b free">可免费取消</span></div>
+    <div class="why">Booking 实查 <b>¥792/晚含税</b>，2,740 条评价，是熊本口碑量最大的品质酒店，与 AMU PLAZA 直结。<b>预算宽松时最省心的选择。</b></div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>酒店</th><th style="width:70px">评分</th><th style="width:100px">Booking 实查</th><th style="width:110px">Trip 同库存</th><th style="width:110px">可退</th><th>位置</th></tr></thead>
+      <tbody>
+        <tr><td class="dest">Sotetsu Grand Fresa Kumamoto</td><td class="mono">9.0</td><td class="mono">¥445</td><td class="mono">—</td><td>订前确认</td><td>熊本站圈</td></tr>
+        <tr><td class="dest">Via Inn Prime Kumamoto</td><td class="mono">9.0</td><td class="mono">¥372</td><td class="mono">—</td><td>订前确认</td><td>熊本站圈，本次最低</td></tr>
+        <tr><td class="dest">Grids Premium Hotel Kumamoto</td><td class="mono">8.4</td><td class="mono">¥434</td><td class="mono">—</td><td>订前确认</td><td>下通商圈</td></tr>
+        <tr><td class="dest">Candeo Hotels Kumamoto Shinshigai</td><td class="mono">8.7</td><td class="mono">¥486</td><td class="mono">≈¥1,500</td><td>订前确认</td><td>新市街，顶楼露天风吕</td></tr>
+        <tr><td class="dest">REF Kumamoto by VESSEL HOTELS</td><td class="mono">9.0</td><td class="mono">¥578</td><td class="mono">—</td><td>订前确认</td><td>下通，大浴场</td></tr>
+        <tr><td class="dest">KOKO HOTEL Premier Kumamoto</td><td class="mono">9.3</td><td class="mono">¥595</td><td class="mono">≈¥960</td><td><span class="b free">免费取消</span></td><td>下通商圈首选</td></tr>
+        <tr><td class="dest">HOTEL AMANEK Kumamoto</td><td class="mono">9.5</td><td class="mono">¥679</td><td class="mono">≈¥1,100</td><td>订前确认</td><td>人气好评区</td></tr>
+        <tr><td class="dest">THE BLOSSOM KUMAMOTO</td><td class="mono">9.3</td><td class="mono">¥792</td><td class="mono">≈¥1,370</td><td><span class="b free">免费取消</span></td><td>与 AMU PLAZA 直结</td></tr>
+        <tr><td class="dest">Kumamoto Washington Hotel Plaza</td><td class="mono">9.2</td><td class="mono">—</td><td class="mono">≈¥760</td><td><span class="b free">免费取消</span></td><td>原手册推荐档</td></tr>
+        <tr><td class="dest">Mitsui Garden Hotel Kumamoto</td><td class="mono">9.1</td><td class="mono">—</td><td class="mono">≈¥830</td><td><span class="b free">免费取消</span></td><td>原手册推荐档</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note tip">
+    <b>五晚组合建议（可退优先）：</b>
+    <br>D1 福冈 <b>Hotel Vista 中洲川端</b> ≈¥880 · D2 由布院 <b>OYADO URAKU</b> ≈¥1,045 · D3 别府 <b>Beppu Daiiti Hotel</b> ≈¥340 · D4 阿苏 <b>Fairfield by Marriott</b> ¥612 · D5 熊本 <b>KOKO Premier</b> ≈¥960
+    <br><b>五晚合计约 ¥3,840（含税、除 D2 外均含可免费取消）。</b>其中 D2 由布院是唯一建议「可退条款放宽一点也接受」的，因为一泊二食本身多为限期取消。
+  </div>
+
+  <div class="note warn">
+    <b>下单前的三条硬提醒：</b>
+    <br>1. <b>日本温泉旅馆的「一泊二食」多为限期免费取消</b>（如入住前 7/14 天），并非随时可退，请逐条读取消政策。
+    <br>2. <b>Booking 与 Trip.com 同店差价可达一倍</b>（尤以阿苏、熊本明显），建议两平台同时开页比价再下单。
+    <br>3. 本次 <b>飞猪与去哪儿未能取得实时报价</b>（登录墙＋反爬重定向），上表中这两列为空。请以各自 App 内实价为准。
+  </div>
+  </details>
+</section>
+
+<!-- ============ FIX ============ -->
+<section id="fix">
+  <h2><span class="num">4</span>原手册勘误（按 JR 官方时刻表核对）</h2>
+  <p class="lead">原《九州6日环线手册·阿苏火山版》有 4 处时刻与实际班表不符。以下均已按官方数据订正，本页上方的所有时刻表已采用订正后的版本。</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:130px">项目</th><th style="width:190px">原手册写法</th><th style="width:210px">官方实际</th><th>影响与处理</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>① 由布院之森 1 号</b></td>
+          <td class="mono">博多 09:19 → 由布院 11:09</td>
+          <td class="mono"><b>博多 09:17 → 由布院 11:31</b></td>
+          <td>发车早 2 分钟、到达晚 22 分钟。<b>实际车程 2h14m</b>。D2 后续安排（11:30 汤之坪）基本不受影响，但需知道抵达是 11:31 而非 11:09。</td>
+        </tr>
+        <tr>
+          <td><b>② 九州横断特急 2 号</b></td>
+          <td class="mono">别府 09:30 → 阿苏 10:50</td>
+          <td class="mono"><b>别府 07:44 → 阿苏 10:08</b></td>
+          <td><b>影响最大的一处。</b>当天别府往阿苏的早班车是 <b>07:44</b>，不是 09:30。<b>请把 D4 的起床时间整体提前约 2 小时</b>，否则会错过当天最早的横断特急。</td>
+        </tr>
+        <tr>
+          <td><b>③ 由布院 → 别府</b></td>
+          <td class="mono">普通车约 25 分钟<br>08:40 → 09:05</td>
+          <td class="mono"><b>无直达车</b><br>08:39 → 大分换乘 → 10:10<br>（约 1h31m）</td>
+          <td><b>没有 25 分钟的直达普通车。</b>久大本线需在大分换乘，最快 1h14m–1h31m。<b>D3 请预留一个半小时</b>，并留意别府地狱巡游的开始时间相应顺延。</td>
+        </tr>
+        <tr>
+          <td><b>④ 阿苏BOY! 2 号</b></td>
+          <td class="mono">约 09:50 → 11:00</td>
+          <td class="mono"><b>阿苏 12:12 → 熊本 13:20</b></td>
+          <td>原手册时刻及上车站与实际预约回执不符。上午仍可按 06:45 内牧晨汤＋大观峰，09:50 回阿苏站取行李，乘坐已预约的阿苏 BOY! 2 号。<b>以预约回执上的阿苏站 12:12 为准，提前到站台；D5 下午熊本城的安排相应顺延。</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note info">
+    <b>另外两处需要知道的时间细节（原手册未写全）：</b>
+    <br>· <b>火口线与火口接驳末班需按当日运营确认</b>。旧稿记为 16:30 下山、17:03 到阿苏站及 16:15 火口接驳返回；本次未复核，不能把这些时刻或「末班约 17:00 前后」作为出行保证。
+    <br>· <b>熊本→博多的新干线</b>：原手册写「瑞穗/樱花号 35 分钟」，实际 <b>つばめ（以熊本始发）才是 35 分钟档</b>（11:20→11:55、12:20→12:55）；さくら/みずほ约 32–42 分钟，均可用。
+  </div>
+</section>
+
+<!-- ============ SRC ============ -->
+<section id="src">
+  <h2><span class="num">5</span>数据来源与口径</h2>
+  <div class="card">
+    <ul class="clean">
+      <li><b>航班时刻</b>：东航 MU517（浦东 09:50 → 福冈 12:55）／MU518（福冈 13:55 → 浦东 15:10），据航班时刻与近期实际执行记录核对；机型 A321，均为直飞。</li>
+      <li><b>JR 时刻</b>：JR 九州《2026 年秋季临时列车运行方案》（2026/08/21 发布）＋ JR 九州官网各列车时刻页（由布院之森、阿苏BOY!、九州横断特急、九州新干线）。</li>
+      <li><b>火口线巴士</b>：九州产交巴士「阿苏火口线」时刻与票价（阿苏站→山上 ¥730、至草千里 ¥640、火口接驳车 ¥600）。</li>
+      <li><b>酒店价格</b>：Booking.com 中文站<b>实时查询</b>（2026/10/03 执行，检查日期按 D1–D5 逐晚设置，币种人民币、1 间房 2 位成人、含税）；Trip.com 国际站实时查询（USD 口径，按 1 USD ≈ 7.2 CNY 折算，1 间房 2 位成人、含税）。</li>
+      <li><b>已下单酒店</b>：2026/10/04 核对本地 hotels 文件夹的四份预订确认 PDF 及 10/29 Klook 图片；订单取消与餐食政策不沿用历史比价。10/27 两间单人房按用户确认，金额按 PDF 1,238.41 汇总；Klook 金额留空。每人费用汇总中的机票与指定席金额由用户确认，待购 JR 通票采用官网标准价预算，日元折算沿用确认单估算口径。</li>
+      <li><b>携程</b>：公开页面参考起价；<b>飞猪 / 去哪儿</b>：本次查询被登录墙与反爬重定向拦截，<b>未取得实时报价</b>，表中相应列为空。</li>
+      <li><b>火山安全</b>：阿苏山官方 gas 情报（aso-vc.jp）——火口开放由 SO₂ 浓度实时决定，出发前一晚必查。</li>
+    </ul>
+  </div>
+
+  <div class="note amber">
+    <b>关于汇率与浮动的说明：</b>原手册的日元与美元预算按 1 元 ≈ 20.2 日元、1 USD ≈ 7.2 CNY 估算。<b>上方酒店红色报价为 2026/10/04 Trip.com 实时查询快照</b>，随库存变化；历史价格已折叠归档。铁路时刻以 JR 九州出发当日发布为准，下单/乘车前请以官方渠道最终确认。
+  </div>
+</section>
+
+<footer>
+  <b>九州环线执行手册</b> · 基于《九州6日环线手册·阿苏火山版》重制 · 2026/10/27 – 11/1<br>
+  往返航班：<b>东航 MU517（浦东 09:50 → 福冈 12:55）／ MU518（福冈 13:55 → 浦东 15:10）</b><br>
+  行程核对 2026/10/03 · 酒店订单与报价核对 2026/10/04 · 未预约班次仍需出发前复核<br>
+  航班时刻可能调整，请以出票信息与航司当日通知为准。火口开放状态请以阿苏山官方 gas 情报为准。<br>
+  祝火山不冒大烟、晨雾如期、三汤皆暖。
+</footer>
+
+</div>
+<script>
+(() => {
+  const navigation = document.querySelector('nav');
+  const strip = navigation.querySelector('.wrap');
+  const entries = Array.from(navigation.querySelectorAll('a[href^="#"]')).map(link => {
+    const target = document.getElementById(link.hash.slice(1));
+    let end = null;
+    if (target && !target.matches('section')) {
+      end = target.nextElementSibling;
+      while (end && !end.matches('h2, h3, .day')) end = end.nextElementSibling;
+    }
+    return {link, target, end};
+  }).filter(entry => entry.target);
+  if (!entries.length) return;
+  let current = null;
+  let pending = false;
+  const activate = entry => {
+    if (current === entry) return;
+    current = entry;
+    entries.forEach(item => {
+      if (item === entry) item.link.setAttribute('aria-current', 'location');
+      else item.link.removeAttribute('aria-current');
+    });
+    const tabBounds = entry.link.getBoundingClientRect();
+    const stripBounds = strip.getBoundingClientRect();
+    if (tabBounds.left < stripBounds.left + 16) {
+      strip.scrollBy({left:tabBounds.left - stripBounds.left - 16});
+    } else if (tabBounds.right > stripBounds.right - 16) {
+      strip.scrollBy({left:tabBounds.right - stripBounds.right + 16});
+    }
+  };
+  const update = () => {
+    pending = false;
+    const boundary = navigation.getBoundingClientRect().bottom + 32;
+    let selected = entries[0];
+    let latestTop = -Infinity;
+    entries.forEach(entry => {
+      const top = entry.target.getBoundingClientRect().top;
+      const end = entry.end || entry.target.closest('section');
+      const bottom = entry.target.matches('section') ? Infinity :
+        entry.end ? end.getBoundingClientRect().top : end.getBoundingClientRect().bottom;
+      if (top <= boundary && bottom > boundary && top >= latestTop) {
+        selected = entry;
+        latestTop = top;
+      }
+    });
+    if (window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+      selected = entries[entries.length - 1];
+    }
+    activate(selected);
+  };
+  const schedule = () => {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(update);
+  };
+  entries.forEach(entry => entry.link.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    activate(entry);
+  }));
+  window.addEventListener('scroll', schedule, {passive:true});
+  window.addEventListener('resize', schedule);
+  window.addEventListener('hashchange', schedule);
+  window.addEventListener('load', schedule);
+  document.addEventListener('toggle', schedule, true);
+  update();
+})();
+
+(() => {
+  const mapElement = document.getElementById('hotel-map');
+  const fallback = document.getElementById('hotel-map-fallback');
+  const loadButton = document.getElementById('hotel-map-load');
+  if (!mapElement || !fallback || !loadButton) return;
+  const hotels = [
+    {date:'10/27', name:'Vista 中洲川端', point:[33.595374,130.408272], room:'2 间淋浴单人房 / 2 人', meal:'不含早餐', checkIn:'15:00 后入住'},
+    {date:'10/28', name:'由布院清孔苑', point:[33.273265,131.366474], room:'10 榻榻米日式房；两张单人床待确认', meal:'两人两餐；早餐待确认', checkIn:'15:00–17:30 入住'},
+    {date:'10/29', name:'御宿野乃别府', point:[33.279502,131.501567], room:'1 间禁烟双床 / 2 张加大单人床', meal:'不含早餐', checkIn:'15:00 后入住'},
+    {date:'10/30', name:'阿苏万枫', point:[32.936993,131.079233], room:'1 间标准双床 / 2 张单人床', meal:'无餐食，不含早餐', checkIn:'15:00 后入住'},
+    {date:'10/31', name:'THE BLOSSOM 熊本', point:[32.789180,130.688685], room:'1 间日式豪华双床 NAGOMI（禁烟）', meal:'无餐食，不含早餐', checkIn:'15:00 后入住'}
+  ];
+  const transfers = [
+    {color:'#1d5fa8', text:'10/28：地铁至博多 → 已预约由布院之森 → 接驳 / 出租车'},
+    {color:'#b26a00', text:'10/29：由布院 → 大分换乘 → 别府；班次待复核'},
+    {color:'#1b7f4b', text:'10/30：九州横断特急优先；车次待核实 / 预约'},
+    {color:'#c62828', text:'10/31：阿苏站 → 已预约阿苏 BOY! → 熊本站前步行'}
+  ];
+  loadButton.addEventListener('click', () => {
+    if (loadButton.disabled) return;
+    loadButton.disabled = true;
+    loadButton.textContent = '在线地图加载中…';
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css';
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js';
+    script.async = true;
+    let map;
+    let expired = false;
+    const fail = () => {
+      if (expired) return;
+      expired = true;
+      clearTimeout(timeout);
+      if (map) map.remove();
+      stylesheet.remove();
+      script.remove();
+      mapElement.hidden = true;
+      fallback.hidden = false;
+      loadButton.disabled = false;
+      loadButton.textContent = '在线地图不可用，点击重试';
+    };
+    const timeout = setTimeout(fail, 8000);
+    let pendingAssets = 2;
+    const assetReady = () => {
+      if (expired) return;
+      pendingAssets -= 1;
+      if (!pendingAssets) initializeMap();
+    };
+    stylesheet.onload = script.onload = assetReady;
+    stylesheet.onerror = script.onerror = fail;
+    document.head.appendChild(stylesheet);
+    document.head.appendChild(script);
+    function initializeMap() {
+  try {
+    mapElement.hidden = false;
+    map = L.map(mapElement, {scrollWheelZoom:false, zoomControl:false});
+    L.control.zoom({zoomInTitle:'放大地图', zoomOutTitle:'缩小地图'}).addTo(map);
+    map.fitBounds(hotels.map(hotel => hotel.point), {padding:[35,35]});
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    });
+    let loadedTiles = 0;
+    let failedTiles = 0;
+    tiles.on('tileload', () => {
+      if (expired) return;
+      loadedTiles += 1;
+      clearTimeout(timeout);
+      loadButton.hidden = true;
+      mapElement.hidden = false;
+      fallback.hidden = true;
+      map.invalidateSize();
+    });
+    tiles.on('tileerror', () => {
+      failedTiles += 1;
+      if (!loadedTiles && failedTiles >= 3) {
+        fail();
+      }
+    });
+    tiles.addTo(map);
+    hotels.forEach((hotel, index) => {
+      const icon = L.divIcon({className:'', html:`<span class="hotel-pin">${index + 1}</span>`, iconSize:[30,30], iconAnchor:[15,15]});
+      L.marker(hotel.point, {icon, title:`${hotel.date} ${hotel.name}`, alt:`酒店 ${index + 1}：${hotel.name}`})
+        .bindTooltip(`${hotel.date} · ${hotel.name}`)
+        .bindPopup(`<b>已下单 · ${hotel.date} ${hotel.name}</b><br>${hotel.room}<br>${hotel.meal}<br>${hotel.checkIn}<br><a href="#hotel-booked">查看订单金额与取消截止</a>`)
+        .addTo(map);
+      if (index < hotels.length - 1) {
+        L.polyline([hotel.point, hotels[index + 1].point], {color:transfers[index].color, weight:3, dashArray:'8 8'})
+          .bindTooltip(`${transfers[index].text}（连线仅为顺序示意）`)
+          .addTo(map);
+      }
+    });
+    mapElement.hidden = true;
+  } catch {
+    fail();
+  }
+    }
+  });
+})();
+</script>
+</body>
+</html>
