@@ -77,6 +77,14 @@
     .address{color:var(--muted);font-size:12px!important}
     .links{display:flex;gap:20px;flex-wrap:wrap}
     .links a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:13px}
+    .packing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+    .packing-group{min-width:0}
+    .packing-group ul{list-style:none;margin:0;padding:0}
+    .packing-group li{display:flex;align-items:flex-start;gap:10px;border-bottom:1px dashed var(--line)}
+    .packing-group input{flex:0 0 20px;width:20px;height:20px;margin:12px 0;accent-color:var(--green)}
+    .packing-group label{flex:1;min-width:0;min-height:44px;padding:10px 0;font-size:14px;cursor:pointer}
+    .packing-group input:checked+label{color:var(--muted);text-decoration:line-through}
+    @media(max-width:600px){.packing-grid{grid-template-columns:minmax(0,1fr)}}
     details{font-size:13px}
     summary{cursor:pointer;min-height:44px;display:list-item;align-content:center;font-weight:700}
     details ul{padding-left:19px;margin:4px 0}
@@ -99,6 +107,7 @@
         <g fill="#20332d" font-size="19" text-anchor="middle"><text x="36" y="49">福冈</text><text x="168" y="49">由布院</text><text x="300" y="49">别府</text><text x="432" y="49">阿苏</text><text x="564" y="49">熊本</text></g>
       </svg>
       <p class="meta">日本时间比北京时间快 1 小时；以下日本行程均为当地时间。</p>
+      <div class="links"><a class="hard" href="#packing"><strong>出发前必查 · 必带物品</strong></a></div>
     </div>
   </header>
   <nav aria-label="每日行程">
@@ -108,6 +117,84 @@
   </nav>
   <main>
     <div class="wrap">
+      <section id="packing" aria-labelledby="packing-title">
+        <div class="section-title"><h2 class="hard" id="packing-title">必带物品</h2><small>六天行程 · 每人一份</small></div>
+        <div class="alert"><b>优先装好：护照、日币、日本流量卡、雨伞＋雨衣、保暖外套。</b>山区带防风层；充电宝和常用药随身，不放托运行李。</div>
+        <details open>
+          <summary>衣物依据 · 天气与温度参考</summary>
+          <p class="muted">查询于 2026-10-23，以下为最低—最高温，非实时预报；出发前一天再查。</p>
+          <p>10/27 福冈 <b>17—24℃</b>，降雨概率约 50%；10/28 由布院 <b>9—15℃</b>，早晚偏冷。</p>
+          <p>10/29 别府 <b>13—20℃</b>；10/30 阿苏站附近 <b>14—20℃</b>，有降雨可能。</p>
+          <p>10/31 熊本 <b>12—19℃</b>；11/01 福冈 <b>12—15℃</b>，返程外套随身留用。</p>
+          <p><b class="hard">阿苏站附近的预报不是火山口温度。</b>山上更冷、风更大；遇强风、雷雨或关闭，不勉强上山。</p>
+          <p class="muted">来源：<a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&amp;area_code=400000" target="_blank" rel="noopener noreferrer">气象厅</a>（10/27 福冈）；<a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>（其余地点预报，温度取整）。台风影响尚未确认，另查<a href="https://www.jma.go.jp/bosai/typhoon/" target="_blank" rel="noopener noreferrer">气象厅台风信息</a>及航班、铁路运行通知。</p>
+        </details>
+        <div class="packing-grid">
+          <div class="packing-group">
+            <h3>证件与订单</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-passport"><label for="pack-passport"><b>护照、有效签证／入境资格文件</b>，原件随身。</label></li>
+              <li><input type="checkbox" id="pack-entry"><label for="pack-entry">Visit Japan Web 入境及海关申报信息，提前填写并保存备份。</label></li>
+              <li><input type="checkbox" id="pack-bookings"><label for="pack-bookings">机票、五晚酒店订单、JR Pass 兑换资料及指定席回执离线备份；回执不能代替纸券。</label></li>
+              <li><input type="checkbox" id="pack-insurance"><label for="pack-insurance">旅行保险、紧急联系人、证件备份；与原件分开保存。</label></li>
+            </ul>
+          </div>
+          <div class="packing-group">
+            <h3>现金与支付</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-cash"><label for="pack-cash"><b>日币现金</b>，备小额纸币与硬币，分两处存放；按个人消费准备。</label></li>
+              <li><input type="checkbox" id="pack-card"><label for="pack-card">可境外使用的信用卡，确认额度、密码及境外支付功能；带预订时使用的卡。</label></li>
+              <li><input type="checkbox" id="pack-transit"><label for="pack-transit">零钱包、已有的交通 IC 卡；山区小店和巴士不只依赖手机支付。</label></li>
+            </ul>
+          </div>
+          <div class="packing-group">
+            <h3>通信与电子</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-sim"><label for="pack-sim"><b>日本流量卡／eSIM</b>覆盖六天，确认手机兼容、激活方式、流量与热点限制。</label></li>
+              <li><input type="checkbox" id="pack-sms"><label for="pack-sms">国内 SIM 保留接收短信的能力，防止误开高额数据漫游；实体 SIM 带取卡针。</label></li>
+              <li><input type="checkbox" id="pack-power"><label for="pack-power">手机、充电线、充电器、合规充电宝；<b>充电宝随身、不托运</b>，遵守航司要求。</label></li>
+              <li><input type="checkbox" id="pack-plug"><label for="pack-plug">按需带日本 A 型转换插头；确认电器支持 100V，三脚插头尤其要检查。</label></li>
+              <li><input type="checkbox" id="pack-offline"><label for="pack-offline">离线地图、翻译、酒店地址及同行人的联系方式。</label></li>
+            </ul>
+          </div>
+          <div class="packing-group">
+            <h3>衣物与鞋</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-shirts"><label for="pack-shirts">长袖打底 3—4 件、短袖 1 件；分层穿，适应室内和市区温差。</label></li>
+              <li><input type="checkbox" id="pack-warm"><label for="pack-warm"><b>抓绒／薄毛衣 1 件＋轻薄保暖外套 1 件</b>，由布院早晚及阿苏留用。</label></li>
+              <li><input type="checkbox" id="pack-shell"><label for="pack-shell">防风防雨外层 1 件；与已有外套功能重复时可合并。</label></li>
+              <li><input type="checkbox" id="pack-trousers"><label for="pack-trousers">长裤 2—3 条、内衣裤与袜子各 6—7 套／双、轻便睡衣。</label></li>
+              <li><input type="checkbox" id="pack-shoes"><label for="pack-shoes"><b>穿习惯的防滑步行鞋</b>，最好耐雨；不临时穿新鞋。</label></li>
+              <li><input type="checkbox" id="pack-scarf"><label for="pack-scarf">帽子、薄围巾／脖套；怕冷者加薄手套。</label></li>
+            </ul>
+          </div>
+          <div class="packing-group">
+            <h3>雨具与防水</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-rain"><label for="pack-rain"><b>折叠雨伞＋带帽雨衣各 1 件</b>；大风和山上优先雨衣，不勉强撑伞。</label></li>
+              <li><input type="checkbox" id="pack-waterproof"><label for="pack-waterproof">背包防雨罩、防水袋／密封袋，保护护照、手机与纸券。</label></li>
+              <li><input type="checkbox" id="pack-wet"><label for="pack-wet">湿伞袋、装湿衣物的袋子、备用袜子。</label></li>
+            </ul>
+          </div>
+          <div class="packing-group">
+            <h3>洗护与药品</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-toiletries"><label for="pack-toiletries">牙刷牙膏、护肤、防晒、润唇膏、纸巾及个人卫生用品。</label></li>
+              <li><input type="checkbox" id="pack-medicine"><label for="pack-medicine">日常处方药带足并保留原包装；特殊药品提前核对日本入境限制。</label></li>
+              <li><input type="checkbox" id="pack-firstaid"><label for="pack-firstaid">个人适用的止痛退烧药、肠胃药、晕车药、创可贴／防磨脚贴。</label></li>
+              <li><input type="checkbox" id="pack-glasses"><label for="pack-glasses">眼镜、隐形眼镜及护理用品；带备用框架眼镜。</label></li>
+            </ul>
+          </div>
+          <div class="packing-group">
+            <h3>随身小包</h3>
+            <ul>
+              <li><input type="checkbox" id="pack-daybag"><label for="pack-daybag">护照、钱包、手机、充电宝、当天车票、雨具、常用药随身。</label></li>
+              <li><input type="checkbox" id="pack-bottle"><label for="pack-bottle">水杯、少量零食、环保购物袋；行李留出购物空间。</label></li>
+              <li><input type="checkbox" id="pack-wine"><label for="pack-wine">保存<a href="#wine-reference">购酒参考图</a>；返程先值机、托运、安检，再按登机时间安排购物。</label></li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section id="route-overview" aria-labelledby="route-title">
         <div class="section-title"><h2 id="route-title">五站行程地图</h2><small>北九州</small></div>
         <figure class="route-map">
@@ -282,5 +369,22 @@
       <div class="links"><a href="https://www.jrkyushu.co.jp/english/" target="_blank" rel="noopener noreferrer">JR 九州</a><a href="https://www.fukuoka-airport.jp/en/access/bus2.html" target="_blank" rel="noopener noreferrer">机场国际线接驳</a><a href="#flights">回到航班信息</a></div>
     </div>
   </footer>
+  <script>
+    const packingItems = [...document.querySelectorAll('#packing input[type="checkbox"]')];
+    const packingStorageKey = 'kyushu-packing-2026-v1';
+    try {
+      const savedPackingItems = JSON.parse(localStorage.getItem(packingStorageKey) || '[]');
+      if (Array.isArray(savedPackingItems)) {
+        for (const item of packingItems) item.checked = savedPackingItems.includes(item.id);
+      }
+    } catch {}
+    for (const item of packingItems) {
+      item.addEventListener('change', () => {
+        try {
+          localStorage.setItem(packingStorageKey, JSON.stringify(packingItems.filter(checkbox => checkbox.checked).map(checkbox => checkbox.id)));
+        } catch {}
+      });
+    }
+  </script>
 </body>
 </html>
