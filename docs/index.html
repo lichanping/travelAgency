@@ -20,6 +20,23 @@
     h1{margin:2px 0 4px;font:700 30px/1.4 "Songti SC","Noto Serif CJK SC",serif}
     .meta{margin:0;color:var(--muted);font-size:12px}
     .route{display:block;width:100%;height:auto;margin:12px 0 0;color:var(--green)}
+    .route-map{margin:0}
+    .geo-canvas{position:relative;aspect-ratio:720/620;width:100%}
+    .geo-canvas>img{display:block;width:100%;height:100%}
+    .geo-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+    .geo-lines path{fill:none;stroke:var(--green);stroke-width:4}
+    .geo-lines .route-return{stroke:var(--red);stroke-dasharray:10 8}
+    .route-stop{position:absolute;width:0;height:0}
+    .route-pin{position:absolute;display:grid;place-items:center;width:24px;height:24px;transform:translate(-50%,-50%);border:2px solid #fff;border-radius:50%;background:var(--green);color:#fff;font-size:12px;font-weight:700;box-shadow:0 1px 4px #20332d55;pointer-events:none}
+    .route-label{position:absolute;left:16px;top:0;transform:translateY(-50%);display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:56px;padding:4px 6px;background:#fffffff0;color:var(--ink);text-decoration:none;white-space:nowrap;line-height:1.35;font-size:13px}
+    .route-label small{font-size:11px;color:var(--muted)}
+    .label-left .route-label{left:auto;right:16px;text-align:right}
+    .route-north{position:absolute;top:10px;right:10px;padding:2px 6px;background:#fffffff0;font-size:12px;font-weight:700}
+    .route-legend{display:flex;flex-wrap:wrap;gap:4px 18px;margin:10px 0 5px;font-size:12px}
+    .route-legend span{display:inline-flex;align-items:center;gap:6px}
+    .route-legend i{display:inline-block;width:22px;border-top:3px solid var(--green)}
+    .route-legend .return-key{border-top-color:var(--red);border-top-style:dashed}
+    .route-map figcaption{color:var(--muted);font-size:12px}
     nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 9px #20332d08}
     nav .wrap{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding:0 8px}
     nav a{min-height:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;text-decoration:none;color:var(--muted);font-size:11px}
@@ -86,6 +103,34 @@
   </nav>
   <main>
     <div class="wrap">
+      <section id="route-overview" aria-labelledby="route-title">
+        <div class="section-title"><h2 id="route-title">五站行程地图</h2><small>北九州</small></div>
+        <figure class="route-map">
+          <div class="geo-canvas">
+            <img src="assets/kyushu-route-base.png" width="720" height="620" alt="九州北部地理底图，福冈在西北，由布院与别府在东侧，阿苏在中南部，熊本在西南。">
+            <svg class="geo-lines" viewBox="0 0 720 620" aria-hidden="true">
+              <defs>
+                <marker id="route-arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 6,3 0,6" fill="#21614b"/></marker>
+                <marker id="return-arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 6,3 0,6" fill="#a0322a"/></marker>
+              </defs>
+              <path d="M112.1 111.32L445.7 245.7" marker-end="url(#route-arrow)"/>
+              <path d="M460.54 251.68L493.7 249.85" marker-end="url(#route-arrow)"/>
+              <path d="M509.66 248.97L367.6 386.5" marker-end="url(#route-arrow)"/>
+              <path d="M356.08 397.66L228.7 455.1" marker-end="url(#route-arrow)"/>
+              <path class="route-return" d="M205 450Q55 305 105 128" marker-end="url(#return-arrow)"/>
+            </svg>
+            <span class="route-north" aria-label="北方朝上">↑ 北</span>
+            <div class="route-stop" data-route-stop="福冈" style="left:15.569%;top:17.955%"><span class="route-pin" aria-hidden="true">1</span><a class="route-label" href="#day1"><b>福冈</b><small>10/27</small></a></div>
+            <div class="route-stop label-left" data-route-stop="由布院" style="left:63.963%;top:40.594%"><span class="route-pin" aria-hidden="true">2</span><a class="route-label" href="#day2"><b>由布院</b><small>10/28</small></a></div>
+            <div class="route-stop" data-route-stop="别府" style="left:70.786%;top:40.156%"><span class="route-pin" aria-hidden="true">3</span><a class="route-label" href="#day3"><b>别府</b><small>10/29</small></a></div>
+            <div class="route-stop" data-route-stop="阿苏" style="left:49.456%;top:64.138%"><span class="route-pin" aria-hidden="true">4</span><a class="route-label" href="#day4"><b>阿苏</b><small>10/30</small></a></div>
+            <div class="route-stop label-left" data-route-stop="熊本" style="left:29.732%;top:74.460%"><span class="route-pin" aria-hidden="true">5</span><a class="route-label" href="#day5"><b>熊本</b><small>10/31</small></a></div>
+          </div>
+          <div class="route-legend"><span><i aria-hidden="true"></i>1 → 5：福冈 → 熊本</span><span><i class="return-key" aria-hidden="true"></i>11/01：熊本 → 博多 → 福冈机场</span></div>
+          <figcaption>标记对应五晚住宿地；连线仅表示行程顺序，非实际铁路或公路轨迹。底图：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">日本国土地理院・地理院タイル</a>，经裁切拼接。</figcaption>
+        </figure>
+      </section>
+
       <section id="flights" aria-labelledby="flight-title">
         <div class="section-title"><h2 id="flight-title">往返航班</h2><small>东航 · 当地时刻</small></div>
         <div class="flights">
